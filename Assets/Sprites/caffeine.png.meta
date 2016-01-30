@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 7234276318b1f4899a653ac089f6f954
-timeCreated: 1454123223
+timeCreated: 1454125514
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: caffeine_0
     21300002: caffeine_1
     21300004: caffeine_2
+    21300006: caffeine_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,27 +57,29 @@ TextureImporter:
     - name: caffeine_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 369
-        width: 131
-        height: 182
+        x: 3
+        y: 553
+        width: 150
+        height: 207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -65.5, y: 2}
-        - {x: -23.5, y: -91}
-        - {x: -0.5, y: -91}
-        - {x: 56.5, y: -78}
-        - {x: 65.5, y: -76}
-        - {x: 65.5, y: 91}
-        - {x: -15.5, y: 91}
-        - {x: -65.5, y: 88}
+      - - {x: 1, y: 103.5}
+        - {x: -72, y: 92.5}
+        - {x: -75, y: 87.5}
+        - {x: -75, y: 19.5}
+        - {x: -32, y: -94.5}
+        - {x: -21, y: -103.5}
+        - {x: 22, y: -103.5}
+        - {x: 75, y: -91.5}
+        - {x: 75, y: 99.5}
+        - {x: 65, y: 103.5}
     - name: caffeine_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 185
+        x: 14
+        y: 369
         width: 131
         height: 182
       alignment: 0
@@ -94,7 +97,26 @@ TextureImporter:
     - name: caffeine_2
       rect:
         serializedVersion: 2
-        x: 1
+        x: 14
+        y: 185
+        width: 131
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.5, y: 2}
+        - {x: -23.5, y: -91}
+        - {x: -0.5, y: -91}
+        - {x: 56.5, y: -78}
+        - {x: 65.5, y: -76}
+        - {x: 65.5, y: 91}
+        - {x: -15.5, y: 91}
+        - {x: -65.5, y: 88}
+    - name: caffeine_3
+      rect:
+        serializedVersion: 2
+        x: 14
         y: 1
         width: 131
         height: 182

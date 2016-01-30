@@ -2,9 +2,15 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	float coffeeLevel;
+	int coffeeLevel;
 
-	public CoffeLevelImage caffeLevelImage;
+	PlayerMovement movement;
+
+	public CoffeLevelImage coffeLevelImage;
+
+	void Awake() {
+		movement = GetComponent<PlayerMovement>();
+	}
 
 	void Start() {
 	
@@ -16,13 +22,28 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.tag == "coffeeBean") {
-			coffeeLevel += 10;
+			coffeeLevel += 1;
 			col.gameObject.SetActive(false);
 			UpdateUI();
+
+			switch (coffeeLevel) {
+			case 1:
+				movement.SetSlowSpeed();
+				break;
+			case 2:
+				movement.SetNormalSpeed();
+				break;
+			case 3:
+				movement.SetFastSpeed();
+				break;
+			case 4:
+				movement.SetSuperFastSpeed();
+				break;
+			}
 		}
 	}
 
 	void UpdateUI() {
-		caffeLevelImage.UpdateLevels(coffeeLevel);
+		coffeLevelImage.UpdateLevels(coffeeLevel);
 	}
 }

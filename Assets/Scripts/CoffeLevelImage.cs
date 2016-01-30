@@ -4,27 +4,40 @@ using UnityEngine.UI;
 
 public class CoffeLevelImage : MonoBehaviour {
 
-	public Sprite level1Sprite;
-	public Sprite level2Sprite;
-	public Sprite level3Sprite;
+	public Sprite slowSprite;
+	public Sprite normalSprite;
+	public Sprite fastSprite;
+	public Sprite superFastSprite;
 
 	Image image;
+	int level;
 
 	void Start() {
 		image = GetComponent<Image>();
 	}
 
 	void Update() {
-	
+//		if (level == 4) {
+//			Quaternion rot = transform.rotation;
+//			rot.eulerAngles *= Random.
+//		}
 	}
 
-	public void UpdateLevels(float level) {
-		if (level <= 10) {
-			image.sprite = level1Sprite;
-		} else if (level <= 20) {
-			image.sprite = level2Sprite;
-		} else {
-			image.sprite = level3Sprite;
-		}				
+	public void UpdateLevels(int _level) {
+		level = _level;
+		switch (level) {
+		case 1:
+			image.sprite = slowSprite;
+			break;
+		case 2:
+			image.sprite = normalSprite;
+			break;
+		case 3:
+			image.sprite = fastSprite;
+			break;
+		case 4:
+			image.sprite = superFastSprite;
+			break;
+		}
 	}
 }

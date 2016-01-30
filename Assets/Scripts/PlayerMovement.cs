@@ -6,7 +6,13 @@ public class PlayerMovement : MonoBehaviour {
 	[SerializeField] private float initialSpeed;
 	[SerializeField] private float jumpForce;
 
-	float speed;
+	[SerializeField] float slowSpeed;
+	[SerializeField] float normalSpeed;
+	[SerializeField] float fastSpeed;
+	[SerializeField] float superFastSpeed;
+
+	float currentSpeed;
+
 	Rigidbody2D body;
 	bool isGrounded;
 	bool canDoubleJump;
@@ -19,6 +25,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Start() {
 		UpdateSpeed(initialSpeed);
+
+		slowSpeed = initialSpeed / 2;
+		normalSpeed = initialSpeed;
+		fastSpeed = initialSpeed * 2;
+		superFastSpeed = initialSpeed * 3;
+		currentSpeed = normalSpeed;
 	}
 
 	void Update() {
@@ -41,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void FixedUpdate() {
 		Vector2 pos = transform.position;
-		pos.x += speed * Time.fixedDeltaTime;
+		pos.x += currentSpeed * Time.fixedDeltaTime;
 		transform.position = pos;
 	}
 
@@ -58,6 +70,22 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void UpdateSpeed(float _speed) {
-		speed = _speed;
+		normalSpeed = _speed;
+	}
+
+	public void SetSlowSpeed() {
+		currentSpeed = slowSpeed;
+	}
+
+	public void SetNormalSpeed() {
+		currentSpeed = normalSpeed;
+	}
+
+	public void SetFastSpeed() {
+		currentSpeed = fastSpeed;
+	}
+
+	public void SetSuperFastSpeed() {
+		currentSpeed = superFastSpeed;
 	}
 }
