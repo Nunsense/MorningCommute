@@ -1,0 +1,329 @@
+fileFormatVersion: 2
+guid: 363e3769a9f1541e9a8ecc31529ef85d
+timeCreated: 1454190502
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: orc run (1)_0
+    21300002: orc run (1)_1
+    21300004: orc run (1)_2
+    21300006: orc run (1)_3
+    21300008: orc run (1)_4
+    21300010: orc run (1)_5
+    21300012: orc run (1)_6
+    21300014: orc run (1)_7
+    21300016: orc run (1)_8
+    21300018: orc run (1)_9
+    21300020: orc run (1)_10
+    21300022: orc run (1)_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: orc run (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 853
+        width: 191
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95.5, y: 69}
+        - {x: 73.5, y: 77}
+        - {x: -95.5, y: 77}
+        - {x: -95.5, y: -21}
+        - {x: -21.5, y: -77}
+        - {x: 6.5, y: -77}
+        - {x: 16.5, y: -73}
+        - {x: 25.5, y: -53}
+        - {x: 62.5, y: -41}
+        - {x: 95.5, y: -18}
+    - name: orc run (1)_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 852
+        width: 188
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94, y: -22.5}
+        - {x: -64, y: -71.5}
+        - {x: 69, y: -71.5}
+        - {x: 94, y: -60.5}
+        - {x: 94, y: 14.5}
+        - {x: 55, y: 71.5}
+        - {x: -60, y: 71.5}
+        - {x: -94, y: 38.5}
+    - name: orc run (1)_2
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 853
+        width: 174
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 74}
+        - {x: -55, y: 74}
+        - {x: -87, y: 38}
+        - {x: -87, y: -19}
+        - {x: -85, y: -27}
+        - {x: -67, y: -74}
+        - {x: 54, y: -74}
+        - {x: 84, y: -62}
+        - {x: 87, y: -56}
+        - {x: 87, y: 23}
+        - {x: 53, y: 68}
+    - name: orc run (1)_3
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 852
+        width: 170
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60, y: 79}
+        - {x: -85, y: 65}
+        - {x: -85, y: -48}
+        - {x: -44, y: -79}
+        - {x: 12, y: -79}
+        - {x: 48, y: -66}
+        - {x: 85, y: -29}
+        - {x: 85, y: 37}
+        - {x: 65, y: 79}
+    - name: orc run (1)_4
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 881
+        width: 134
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46, y: 71.5}
+        - {x: -67, y: 45.5}
+        - {x: -67, y: -46.5}
+        - {x: -27, y: -59.5}
+        - {x: -21, y: -57.5}
+        - {x: 22, y: -71.5}
+        - {x: 46, y: -71.5}
+        - {x: 66, y: -63.5}
+        - {x: 67, y: -57.5}
+        - {x: 67, y: 71.5}
+    - name: orc run (1)_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 700
+        width: 137
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 73}
+        - {x: -43.5, y: 64}
+        - {x: -68.5, y: 0}
+        - {x: -68.5, y: -48}
+        - {x: -5.5, y: -73}
+        - {x: 64.5, y: -73}
+        - {x: 68.5, y: -70}
+        - {x: 68.5, y: 58}
+        - {x: 38.5, y: 73}
+    - name: orc run (1)_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 679
+        width: 143
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66.5, y: 75.5}
+        - {x: -71.5, y: 39.5}
+        - {x: -71.5, y: -75.5}
+        - {x: 71.5, y: -75.5}
+        - {x: 71.5, y: 49.5}
+        - {x: 50.5, y: 75.5}
+    - name: orc run (1)_7
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 676
+        width: 145
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: 52.5}
+        - {x: -72.5, y: 2.5}
+        - {x: -72.5, y: -14.5}
+        - {x: -36.5, y: -71.5}
+        - {x: 49.5, y: -71.5}
+        - {x: 72.5, y: -51.5}
+        - {x: 72.5, y: 54.5}
+        - {x: 67.5, y: 60.5}
+        - {x: 23.5, y: 71.5}
+        - {x: -8.5, y: 71.5}
+        - {x: -27.5, y: 64.5}
+    - name: orc run (1)_8
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 677
+        width: 116
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 73.5}
+        - {x: -47, y: 73.5}
+        - {x: -50, y: 63.5}
+        - {x: -58, y: 1.5}
+        - {x: -58, y: -55.5}
+        - {x: -36, y: -50.5}
+        - {x: -15, y: -40.5}
+        - {x: -12, y: -37.5}
+        - {x: -12, y: -31.5}
+        - {x: -13, y: -29.5}
+        - {x: -12, y: -32.5}
+        - {x: -11, y: -36.5}
+        - {x: -18, y: -47.5}
+        - {x: -22, y: -66.5}
+        - {x: -19, y: -73.5}
+        - {x: 19, y: -73.5}
+        - {x: 58, y: -1.5}
+        - {x: 58, y: 46.5}
+        - {x: 52, y: 57.5}
+    - name: orc run (1)_9
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 681
+        width: 170
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67, y: 65.5}
+        - {x: -85, y: 55.5}
+        - {x: -85, y: -48.5}
+        - {x: -48, y: -65.5}
+        - {x: 41, y: -65.5}
+        - {x: 85, y: -40.5}
+        - {x: 85, y: 54.5}
+        - {x: 36, y: 65.5}
+    - name: orc run (1)_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 517
+        width: 179
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.5, y: 76}
+        - {x: -89.5, y: 63}
+        - {x: -89.5, y: 11}
+        - {x: -69.5, y: 0}
+        - {x: -58.5, y: -1}
+        - {x: -55.5, y: 3}
+        - {x: -71.5, y: -27}
+        - {x: -71.5, y: -38}
+        - {x: -29.5, y: -76}
+        - {x: 89.5, y: -76}
+        - {x: 89.5, y: 31}
+        - {x: 33.5, y: 76}
+    - name: orc run (1)_11
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 514
+        width: 181
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 77.5}
+        - {x: -53.5, y: 77.5}
+        - {x: -74.5, y: 76.5}
+        - {x: -90.5, y: 50.5}
+        - {x: -90.5, y: 22.5}
+        - {x: -68.5, y: 4.5}
+        - {x: -56.5, y: 8.5}
+        - {x: -72.5, y: -17.5}
+        - {x: -74.5, y: -25.5}
+        - {x: -63.5, y: -41.5}
+        - {x: -22.5, y: -77.5}
+        - {x: 20.5, y: -77.5}
+        - {x: 90.5, y: -26.5}
+        - {x: 90.5, y: 30.5}
+        - {x: 49.5, y: 57.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -15,7 +15,6 @@ public class WorldController : MonoBehaviour {
 	int topDistance;
 
 	void Awake() {
-		lastFloorX = floorWidth * 2;
 		movement = player.GetComponent<PlayerMovement>();
 	}
 	
@@ -52,7 +51,7 @@ public class WorldController : MonoBehaviour {
 
 			lastFloorX += floorWidth;
 			Vector3 pos = floor.transform.position;
-			pos.x = lastFloorX + floorWidth * 2;
+			pos.x = lastFloorX + floorWidth;
 			pos.y = 0;
 			floor.transform.position = pos;
 			floor.ResetContent(movement.distance);
@@ -69,7 +68,7 @@ public class WorldController : MonoBehaviour {
 		}
 		lastFloorIndex = 0;
 		player.GetComponent<PlayerController>().Reset();
-		lastFloorX = floorWidth;
+		lastFloorX = floorWidth * 2;
 		cameraController.Reset();
 		
 		int top = GetTopDistnce();

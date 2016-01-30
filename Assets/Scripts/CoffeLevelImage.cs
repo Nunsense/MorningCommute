@@ -4,26 +4,44 @@ using UnityEngine.UI;
 
 public class CoffeLevelImage : MonoBehaviour {
 
+	Animator anim;
+	public float shakeAmountCrazy = 0.7f;
+	public float shakeAmount = 0.7f;
+	public Transform crazyImage;
 	public Sprite slowSprite;
 	public Sprite normalSprite;
 	public Sprite fastSprite;
 	public Sprite superFastSprite;
-
+	Vector3 crazyImageOrigin;
+	Vector3 origin;
 	Image image;
 	int level;
 
 	void Awake() {
+		anim = GetComponent<Animator>();
 		image = GetComponent<Image>();
+	}
+	
+	void Start() {
+		crazyImageOrigin = crazyImage.localPosition;
+		origin = transform.localPosition;
 	}
 
 	void Update() {
-//		if (level == 4) {
-//			Quaternion rot = transform.rotation;
-//			rot.eulerAngles *= Random.
-//		}
+		if(level == 2) {
+			Shake(shakeAmount);
+		} else if(level == 3) {
+			Shake(shakeAmountCrazy);
+		}
+	}
+	
+	void Shake(float amount) {
+		crazyImage.localPosition = crazyImageOrigin + Random.insideUnitSphere * amount;
+		transform.localPosition = origin - Random.insideUnitSphere * amount;
 	}
 
 	public void UpdateLevels(int _level) {
+		anim.SetTrigger("action");
 		level = _level;
 		switch (level) {
 		case 0:

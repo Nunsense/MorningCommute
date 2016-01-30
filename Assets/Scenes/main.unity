@@ -1024,7 +1024,7 @@ Transform:
   m_GameObject: {fileID: 216055221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 607362622}
   m_RootOrder: 0
@@ -1054,7 +1054,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 363e3769a9f1541e9a8ecc31529ef85d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdaa564858d74491a8d9726f68d4fbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 4
+  normalSpeed: 6
   jumpForce: 3000
   distance: 0
 --- !u!114 &607362626
@@ -3536,6 +3536,7 @@ GameObject:
   - 222: {fileID: 1031260181}
   - 114: {fileID: 1031260180}
   - 114: {fileID: 1031260182}
+  - 95: {fileID: 1031260183}
   m_Layer: 5
   m_Name: CoffeLevelImage
   m_TagString: Untagged
@@ -3554,7 +3555,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1113479604}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 66, y: -66}
@@ -3579,7 +3580,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300004, guid: 7234276318b1f4899a653ac089f6f954, type: 3}
+  m_Sprite: {fileID: 21300004, guid: b99b0c96334104f74ac02ffeedf65bf1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3604,10 +3605,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d92fea602d741d9842d44b0227da48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowSprite: {fileID: 21300006, guid: 7234276318b1f4899a653ac089f6f954, type: 3}
-  normalSprite: {fileID: 21300004, guid: 7234276318b1f4899a653ac089f6f954, type: 3}
-  fastSprite: {fileID: 21300002, guid: 7234276318b1f4899a653ac089f6f954, type: 3}
-  superFastSprite: {fileID: 21300000, guid: 7234276318b1f4899a653ac089f6f954, type: 3}
+  shakeAmountCrazy: 20
+  shakeAmount: 2
+  crazyImage: {fileID: 1829050698}
+  slowSprite: {fileID: 21300006, guid: b99b0c96334104f74ac02ffeedf65bf1, type: 3}
+  normalSprite: {fileID: 21300004, guid: b99b0c96334104f74ac02ffeedf65bf1, type: 3}
+  fastSprite: {fileID: 21300002, guid: b99b0c96334104f74ac02ffeedf65bf1, type: 3}
+  superFastSprite: {fileID: 21300000, guid: b99b0c96334104f74ac02ffeedf65bf1, type: 3}
+--- !u!95 &1031260183
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031260178}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8945b418478a46228472dc74436bbd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1038871158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,6 +4165,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1829050698}
   - {fileID: 1031260179}
   - {fileID: 1160598055}
   m_Father: {fileID: 34302654}
@@ -4289,7 +4311,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1113479604}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -41.3, y: -44.1}
@@ -6537,6 +6559,73 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1829050697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1829050698}
+  - 222: {fileID: 1829050700}
+  - 114: {fileID: 1829050699}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1829050698
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829050697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1113479604}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -334.00003, y: 158.93893}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1829050699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829050697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 7e6e9d010b40246dfa60db8aa8d5e4fe, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1829050700
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829050697}
 --- !u!1 &1868229490
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	int coffeeLevel;
 	PlayerMovement movement;
 	float coffeeTimeElapsed;
-	float coffeeTime = 5; //5 seconds
+	float coffeeTime = 2; //5 seconds
 	Animator anim;
 
 	void Awake() {
@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void UpdateSpeed() {
+		anim.SetInteger("speed", coffeeLevel);
 		switch (coffeeLevel) {
 		case 0:
 			movement.SetSlowSpeed();
