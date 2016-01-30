@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 		fastSpeed = normalSpeed * 2;
 		superFastSpeed = normalSpeed * 3;
 		
-		currentSpeed = normalSpeed;
+		SetNoSpeed();
 	}
 
 	void Update() {
@@ -62,6 +62,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Jump() {
 		body.AddForce(transform.up * jumpForce);
 	}
+	
+	void DoubleJump() {
+		body.AddForce(transform.up * (jumpForce / 2));
+	}
 
 	void OnCollisionStay2D(Collision2D col) {
 		if (col.gameObject.tag == "ground") {
@@ -78,20 +82,28 @@ public class PlayerMovement : MonoBehaviour {
 	public float VerticalSpeed() {
 		return body.velocity.y;
 	}
+	
+	public void SetNoSpeed() {
+		currentSpeed = 0;
+	}
 
 	public void SetSlowSpeed() {
+		SoundManager.instance.playMusicSlow();
 		currentSpeed = slowSpeed;
 	}
 
 	public void SetNormalSpeed() {
+		SoundManager.instance.playMusicNormal();
 		currentSpeed = normalSpeed;
 	}
 
 	public void SetFastSpeed() {
+		SoundManager.instance.playMusicFast();
 		currentSpeed = fastSpeed;
 	}
 
 	public void SetSuperFastSpeed() {
+		SoundManager.instance.playMusicSuperFast();
 		currentSpeed = superFastSpeed;
 	}
 

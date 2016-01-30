@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	public Transform target;
-	float yScale = 0.15f;
+	float yScale = 0.09f;
 	float xScale = 4.5f;
 	private Vector3 posOffset;
 	private Vector3 posTemp;
@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour {
 		posTemp = transform.position;
 		destinationPos = target.position - posOffset;
 
-		posTemp.y -= (posTemp.y - destinationPos.y) * yScale * Time.deltaTime;
+//		posTemp.y -= (posTemp.y - destinationPos.y) * yScale * Time.deltaTime;
 		posTemp.x -= (posTemp.x - destinationPos.x) * xScale * Time.deltaTime;
 		posTemp.z = -8;
 

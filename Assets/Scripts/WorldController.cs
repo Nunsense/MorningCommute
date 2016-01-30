@@ -20,7 +20,7 @@ public class WorldController : MonoBehaviour {
 	}
 	
 	void Start() {
-		floors = new FloorController[3];
+		floors = new FloorController[4];
 		floors[0] = GetComponentInChildren<FloorController>();
 		floors[0].Initialize();
 		GameObject floor = floors[0].gameObject;
@@ -36,6 +36,12 @@ public class WorldController : MonoBehaviour {
 		floor2.transform.position = new Vector2(floorWidth * 2, 0);
 		floors[2] = floor2.GetComponent<FloorController>();
 		floors[2].Initialize();
+		
+		GameObject floor3 = Instantiate(floor);
+		floor3.transform.parent = transform;
+		floor3.transform.position = new Vector2(floorWidth * 3, 0);
+		floors[3] = floor3.GetComponent<FloorController>();
+		floors[3].Initialize();
 		Reset();
 	}
 
@@ -46,7 +52,7 @@ public class WorldController : MonoBehaviour {
 
 			lastFloorX += floorWidth;
 			Vector3 pos = floor.transform.position;
-			pos.x = lastFloorX + floorWidth;
+			pos.x = lastFloorX + floorWidth * 2;
 			pos.y = 0;
 			floor.transform.position = pos;
 			floor.ResetContent(movement.distance);
@@ -78,7 +84,6 @@ public class WorldController : MonoBehaviour {
 	}
 	
 	public int GetTopDistnce() {
-		Debug.Log(PlayerPrefs.GetInt("top_distance"));
 		return PlayerPrefs.GetInt("top_distance");
 	}
 	
