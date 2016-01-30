@@ -19,7 +19,11 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-	
+		if (transform.position.y < -0.5f) {
+			Camera.main.transform.parent = null;
+//		} else if (transform.position.y < -0.7f) {
+			Die();
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
@@ -66,8 +70,18 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Reset() {
+		Camera.main.transform.parent = transform;
 		movement.Reset();
 		coffeeLevel = 1;
+		UpdateUI();
+	}
+
+	public int GetCoffee() {
+		return coffeeLevel;
+	}
+
+	public void ConsumeCoffee() {
+		coffeeLevel--;
 		UpdateUI();
 	}
 }

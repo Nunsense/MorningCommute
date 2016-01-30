@@ -13,7 +13,7 @@ public class Goblin : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		Vector2 pos = transform.position;
+		Vector3 pos = transform.position;
 		if (speed > 0) {
 			if (pos.x < targetX) {
 				pos.x += speed * Time.fixedDeltaTime;

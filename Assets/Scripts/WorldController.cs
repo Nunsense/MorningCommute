@@ -21,7 +21,10 @@ public class WorldController : MonoBehaviour {
 			lastFloorIndex = (lastFloorIndex + 1) % floors.Length;
 
 			lastFloorX += floorWidth;
-			floor.transform.position = new Vector2(lastFloorX + floorWidth, 0);
+			Vector3 pos = floor.transform.position;
+			pos.x = lastFloorX + floorWidth;
+			pos.y = 0;
+			floor.transform.position = pos;
 			floor.ResetContent();
 		}
 	}
@@ -30,7 +33,7 @@ public class WorldController : MonoBehaviour {
 		for (int i = 0; i < floors.Length; i++) {
 			floors[i].Reset();
 		}
-
+		lastFloorIndex = 0;
 		player.GetComponent<PlayerController>().Reset();
 		lastFloorX = floorWidth * 2;
 	}

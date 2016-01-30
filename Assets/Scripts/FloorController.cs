@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FloorController : MonoBehaviour {
 
-	Vector2 origin;
+	Vector3 origin;
 	FloorLevel[] levels;
 	FloorLevel currentLevel;
 

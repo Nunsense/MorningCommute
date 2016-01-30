@@ -36,21 +36,30 @@ public class FloorLevel : MonoBehaviour {
 		float rand = Random.value;
 		if (rand < 0.33f && oldLady) {
 			if (rand < 0.1f) {
-				oldLady.transform.localPosition = new Vector2(4.15f, 1f);
+				Vector3 pos = oldLady.transform.localPosition;
+				pos.x = 4.15f;
+				pos.y = 1f;
+				oldLady.transform.localPosition = pos;
 				oldLady.gameObject.SetActive(true);
 			} else {
 				oldLady.gameObject.SetActive(false);
 			}
 		} else if (rand < 0.66f && elf) {
 			if (rand < 0.55f) {
-				elf.transform.localPosition = new Vector2(3.64f, 1f);
+				Vector3 pos = elf.transform.localPosition;
+				pos.x = 3.64f;
+				pos.y = 1f;
+				elf.transform.localPosition = pos;
 				elf.gameObject.SetActive(true);
 			} else {
 				elf.gameObject.SetActive(false);
 			}
 		} else if (goblin) {
 			if (rand < 0.88f) {
-				goblin.transform.localPosition = new Vector2(3.64f, 1f);
+				Vector3 pos = goblin.transform.localPosition;
+				pos.x = 3.64f;
+				pos.y = 1f;
+				goblin.transform.localPosition = pos;
 				goblin.gameObject.SetActive(true);
 			} else {
 				goblin.gameObject.SetActive(false);

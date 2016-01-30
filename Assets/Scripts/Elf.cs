@@ -5,7 +5,7 @@ public class Elf : MonoBehaviour {
 	float speed = -0.3f;
 
 	void FixedUpdate() {
-		Vector2 pos = transform.position;
+		Vector3 pos = transform.position;
 		pos.x += speed * Time.fixedDeltaTime;
 		transform.position = pos;
 	}

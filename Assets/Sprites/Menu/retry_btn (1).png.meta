@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: b60ec848510634fd3bfaee82b6372411
+timeCreated: 1454131859
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: retry_btn (1)_0
+    21300002: retry_btn (1)_1
+    21300004: retry_btn (1)_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: retry_btn (1)_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 753
+        width: 571
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94.5, y: -153}
+        - {x: -18.5, y: -143}
+        - {x: -2.5, y: -141}
+        - {x: 22.5, y: -137}
+        - {x: 79.5, y: -131}
+        - {x: 99.5, y: -129}
+        - {x: 119.5, y: -126}
+        - {x: 208.5, y: -117}
+        - {x: 218.5, y: -115}
+        - {x: 266.5, y: -110}
+        - {x: 285.5, y: -108}
+        - {x: 285.5, y: 129}
+        - {x: 283.5, y: 131}
+        - {x: 219.5, y: 127}
+        - {x: 209.5, y: 150}
+        - {x: 202.5, y: 155}
+        - {x: 170.5, y: 168}
+        - {x: 157.5, y: 168}
+        - {x: 140.5, y: 153}
+        - {x: 136.5, y: 148}
+        - {x: 119.5, y: 149}
+        - {x: 95.5, y: 150}
+        - {x: 47.5, y: 151}
+        - {x: 46.5, y: 152}
+        - {x: -4.5, y: 160}
+        - {x: -14.5, y: 161}
+        - {x: -19.5, y: 157}
+        - {x: -59.5, y: 120}
+        - {x: -68.5, y: 127}
+        - {x: -83.5, y: 139}
+        - {x: -91.5, y: 140}
+        - {x: -116.5, y: 134}
+        - {x: -144.5, y: 118}
+        - {x: -156.5, y: 108}
+        - {x: -200.5, y: 116}
+        - {x: -207.5, y: 109}
+        - {x: -214.5, y: 100}
+        - {x: -265.5, y: 97}
+        - {x: -281.5, y: 95}
+        - {x: -285.5, y: 94}
+        - {x: -285.5, y: 76}
+        - {x: -279.5, y: 42}
+        - {x: -278.5, y: 35}
+        - {x: -275.5, y: 23}
+        - {x: -271.5, y: 3}
+        - {x: -265.5, y: -31}
+        - {x: -263.5, y: -39}
+        - {x: -253.5, y: -92}
+        - {x: -251.5, y: -100}
+        - {x: -242.5, y: -154}
+        - {x: -238.5, y: -168}
+        - {x: -201.5, y: -168}
+        - {x: -190.5, y: -166}
+        - {x: -133.5, y: -158}
+        - {x: -117.5, y: -156}
+    - name: retry_btn (1)_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 402
+        width: 571
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94.5, y: -153}
+        - {x: -18.5, y: -143}
+        - {x: -2.5, y: -141}
+        - {x: 22.5, y: -137}
+        - {x: 79.5, y: -131}
+        - {x: 99.5, y: -129}
+        - {x: 119.5, y: -126}
+        - {x: 208.5, y: -117}
+        - {x: 218.5, y: -115}
+        - {x: 266.5, y: -110}
+        - {x: 285.5, y: -108}
+        - {x: 285.5, y: 129}
+        - {x: 283.5, y: 131}
+        - {x: 219.5, y: 127}
+        - {x: 209.5, y: 150}
+        - {x: 202.5, y: 155}
+        - {x: 170.5, y: 168}
+        - {x: 157.5, y: 168}
+        - {x: 140.5, y: 153}
+        - {x: 136.5, y: 148}
+        - {x: 119.5, y: 149}
+        - {x: 95.5, y: 150}
+        - {x: 47.5, y: 151}
+        - {x: 46.5, y: 152}
+        - {x: -4.5, y: 160}
+        - {x: -14.5, y: 161}
+        - {x: -19.5, y: 157}
+        - {x: -59.5, y: 120}
+        - {x: -68.5, y: 127}
+        - {x: -83.5, y: 139}
+        - {x: -91.5, y: 140}
+        - {x: -116.5, y: 134}
+        - {x: -144.5, y: 118}
+        - {x: -156.5, y: 108}
+        - {x: -200.5, y: 116}
+        - {x: -207.5, y: 109}
+        - {x: -214.5, y: 100}
+        - {x: -265.5, y: 97}
+        - {x: -281.5, y: 95}
+        - {x: -285.5, y: 94}
+        - {x: -285.5, y: 76}
+        - {x: -279.5, y: 42}
+        - {x: -278.5, y: 35}
+        - {x: -275.5, y: 23}
+        - {x: -271.5, y: 3}
+        - {x: -265.5, y: -31}
+        - {x: -263.5, y: -39}
+        - {x: -253.5, y: -92}
+        - {x: -251.5, y: -100}
+        - {x: -242.5, y: -154}
+        - {x: -238.5, y: -168}
+        - {x: -201.5, y: -168}
+        - {x: -190.5, y: -166}
+        - {x: -133.5, y: -158}
+        - {x: -117.5, y: -156}
+    - name: retry_btn (1)_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 19
+        width: 571
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -94.5, y: -153}
+        - {x: -18.5, y: -143}
+        - {x: -2.5, y: -141}
+        - {x: 22.5, y: -137}
+        - {x: 79.5, y: -131}
+        - {x: 99.5, y: -129}
+        - {x: 119.5, y: -126}
+        - {x: 208.5, y: -117}
+        - {x: 218.5, y: -115}
+        - {x: 266.5, y: -110}
+        - {x: 285.5, y: -108}
+        - {x: 285.5, y: 129}
+        - {x: 283.5, y: 131}
+        - {x: 219.5, y: 127}
+        - {x: 209.5, y: 150}
+        - {x: 202.5, y: 155}
+        - {x: 170.5, y: 168}
+        - {x: 157.5, y: 168}
+        - {x: 140.5, y: 153}
+        - {x: 136.5, y: 148}
+        - {x: 119.5, y: 149}
+        - {x: 95.5, y: 150}
+        - {x: 47.5, y: 151}
+        - {x: 46.5, y: 152}
+        - {x: -4.5, y: 160}
+        - {x: -14.5, y: 161}
+        - {x: -19.5, y: 157}
+        - {x: -59.5, y: 120}
+        - {x: -68.5, y: 127}
+        - {x: -83.5, y: 139}
+        - {x: -91.5, y: 140}
+        - {x: -116.5, y: 134}
+        - {x: -144.5, y: 118}
+        - {x: -156.5, y: 108}
+        - {x: -200.5, y: 116}
+        - {x: -207.5, y: 109}
+        - {x: -214.5, y: 100}
+        - {x: -265.5, y: 97}
+        - {x: -281.5, y: 95}
+        - {x: -285.5, y: 94}
+        - {x: -285.5, y: 76}
+        - {x: -279.5, y: 42}
+        - {x: -278.5, y: 35}
+        - {x: -275.5, y: 23}
+        - {x: -271.5, y: 3}
+        - {x: -265.5, y: -31}
+        - {x: -263.5, y: -39}
+        - {x: -253.5, y: -92}
+        - {x: -251.5, y: -100}
+        - {x: -242.5, y: -154}
+        - {x: -238.5, y: -168}
+        - {x: -201.5, y: -168}
+        - {x: -190.5, y: -166}
+        - {x: -133.5, y: -158}
+        - {x: -117.5, y: -156}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

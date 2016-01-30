@@ -19,9 +19,12 @@ public class PlayerMovement : MonoBehaviour {
 	bool isGrounded;
 	bool canDoubleJump;
 
-	Vector2 origin;
+	Vector3 origin;
+
+	PlayerController controller;
 
 	void Awake() {
+		controller = GetComponent<PlayerController>();
 		origin = transform.position;
 		canDoubleJump = false;
 		isGrounded = false;
@@ -45,8 +48,9 @@ public class PlayerMovement : MonoBehaviour {
 				Jump();
 			}	
 		} else {
-			if (Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
 				canDoubleJump = false;
+				controller.ConsumeCoffee();
 				Jump();
 			}
 		}
@@ -57,7 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		Vector2 pos = transform.position;
+		Vector3 pos = transform.position;
 		pos.x += currentSpeed * Time.fixedDeltaTime;
 		distance += (int)currentSpeed;
 		transform.position = pos;
