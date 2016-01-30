@@ -75,6 +75,10 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
+	public float VerticalSpeed() {
+		return body.velocity.y;
+	}
+
 	public void SetSlowSpeed() {
 		currentSpeed = slowSpeed;
 	}

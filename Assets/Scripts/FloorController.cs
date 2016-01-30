@@ -15,7 +15,7 @@ public class FloorController : MonoBehaviour {
 		for (int i = 0; i < levels.Length; i++) {
 			levels[i].gameObject.SetActive(false);
 		}
-		ResetContent();
+		ResetContent(0);
 	}
 	
 	public void Initialize() {
@@ -24,14 +24,21 @@ public class FloorController : MonoBehaviour {
 
 	public void Reset() {
 		transform.position = origin;
-		ResetContent();
+		ResetContent(0);
 	}
 
-	public void ResetContent() {
+	public void ResetContent(float distance) {
 		if (currentLevel)
 			currentLevel.gameObject.SetActive(false);
 		
-		currentLevel = levels[Random.Range(0, levels.Length)];
+		if (distance < 20) {
+			currentLevel = levels[Random.Range(0, Mathf.CeilToInt(levels.Length / 3))];
+		} else if (distance > 20 && distance < 50) {
+			currentLevel = levels[Random.Range(0, levels.Length)];
+		} else {
+			currentLevel = levels[Random.Range(0, Mathf.CeilToInt(2 * (levels.Length / 3)))];
+		}
+		
 		currentLevel.gameObject.SetActive(true);
 		currentLevel.Reset();
 	}

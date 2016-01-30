@@ -3,8 +3,9 @@ using System.Collections;
 
 public class WorldController : MonoBehaviour {
 	public Transform player;
+	public PlayerMovement movement;
 	public CameraController cameraController;
-	public GameObject flag;
+	public TopDistanceFlag flag;
 	FloorController[] floors;
 	[SerializeField]
 	float
@@ -15,6 +16,7 @@ public class WorldController : MonoBehaviour {
 
 	void Awake() {
 		lastFloorX = floorWidth * 2;
+		movement = player.GetComponent<PlayerMovement>();
 	}
 	
 	void Start() {
@@ -47,7 +49,7 @@ public class WorldController : MonoBehaviour {
 			pos.x = lastFloorX + floorWidth;
 			pos.y = 0;
 			floor.transform.position = pos;
-			floor.ResetContent();
+			floor.ResetContent(movement.distance);
 		}
 	}
 
@@ -63,19 +65,20 @@ public class WorldController : MonoBehaviour {
 		player.GetComponent<PlayerController>().Reset();
 		lastFloorX = floorWidth;
 		cameraController.Reset();
-//		
-//		int top = GetTopDistnce();
-//		if(top > 0) {
-//			Vector3 pos = flag.transform.position;
-//			pos.x = top;
-//			flag.transform.position = pos;
-//			flag.SetActive(true);
-//		} else {
-//			flag.SetActive(false);
-//		}
+		
+		int top = GetTopDistnce();
+		if(top > 0) {
+			Vector3 pos = flag.transform.position;
+			pos.x = top;
+			flag.transform.position = pos;
+			flag.gameObject.SetActive(true);
+		} else {
+			flag.gameObject.SetActive(false);
+		}
 	}
 	
 	public int GetTopDistnce() {
+		Debug.Log(PlayerPrefs.GetInt("top_distance"));
 		return PlayerPrefs.GetInt("top_distance");
 	}
 	

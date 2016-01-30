@@ -71,6 +71,16 @@ public class PlayerController : MonoBehaviour {
 				UpdateSpeed();
 				UpdateUI();
 			}
+		} else if(col.collider.tag == "ground") {
+			if(movement.VerticalSpeed() > 0) {
+				col.collider.isTrigger = true;
+			}
+		}
+	}
+	
+	void OnTriggerExit2D(Collider2D col) {
+		if(col.tag == "ground") {
+			col.isTrigger = false;
 		}
 	}
 	

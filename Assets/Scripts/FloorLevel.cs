@@ -15,7 +15,6 @@ public class FloorLevel : MonoBehaviour {
 	}
 
 	void Start() {
-		HideEnemies();
 	}
 
 	void HideEnemies() {
