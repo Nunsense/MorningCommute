@@ -26,16 +26,16 @@ public class CoffeLevelImage : MonoBehaviour {
 	public void UpdateLevels(int _level) {
 		level = _level;
 		switch (level) {
-		case 1:
+		case 0:
 			image.sprite = slowSprite;
 			break;
-		case 2:
+		case 1:
 			image.sprite = normalSprite;
 			break;
-		case 3:
+		case 2:
 			image.sprite = fastSprite;
 			break;
-		case 4:
+		case 3:
 			image.sprite = superFastSprite;
 			break;
 		}

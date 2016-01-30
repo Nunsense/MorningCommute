@@ -10,19 +10,28 @@ public class WorldController : MonoBehaviour {
 	float lastFloorX;
 	int lastFloorIndex = 0;
 
-	void Awake () {
+	void Awake() {
 		lastFloorX = floorWidth * 2;
 		floors = GetComponentsInChildren<FloorController>();
 	}
 
-	void Update () {
+	void Update() {
 		if (player.position.x >= lastFloorX) {
 			FloorController floor = floors[lastFloorIndex];
 			lastFloorIndex = (lastFloorIndex + 1) % floors.Length;
 
 			lastFloorX += floorWidth;
 			floor.transform.position = new Vector2(lastFloorX + floorWidth, 0);
-			floor.Reset();
+			floor.ResetContent();
 		}
+	}
+
+	public void Reset() {
+		for (int i = 0; i < floors.Length; i++) {
+			floors[i].Reset();
+		}
+
+		player.GetComponent<PlayerController>().Reset();
+		lastFloorX = floorWidth * 2;
 	}
 }

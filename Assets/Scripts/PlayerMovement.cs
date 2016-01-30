@@ -11,13 +11,18 @@ public class PlayerMovement : MonoBehaviour {
 	[SerializeField] float fastSpeed;
 	[SerializeField] float superFastSpeed;
 
+	public int distance;
+
 	float currentSpeed;
 
 	Rigidbody2D body;
 	bool isGrounded;
 	bool canDoubleJump;
 
+	Vector2 origin;
+
 	void Awake() {
+		origin = transform.position;
 		canDoubleJump = false;
 		isGrounded = false;
 		body = GetComponent<Rigidbody2D>();
@@ -54,6 +59,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate() {
 		Vector2 pos = transform.position;
 		pos.x += currentSpeed * Time.fixedDeltaTime;
+		distance += (int)currentSpeed;
 		transform.position = pos;
 	}
 
@@ -87,5 +93,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void SetSuperFastSpeed() {
 		currentSpeed = superFastSpeed;
+	}
+
+	public void Reset() {
+		transform.position = origin;
+		distance = 0;
 	}
 }

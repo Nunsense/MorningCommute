@@ -6,9 +6,11 @@ public class PlayerController : MonoBehaviour {
 
 	PlayerMovement movement;
 
+	public GuiManager gui;
 	public CoffeLevelImage coffeLevelImage;
 
 	void Awake() {
+		coffeeLevel = 1;
 		movement = GetComponent<PlayerMovement>();
 	}
 
@@ -27,23 +29,34 @@ public class PlayerController : MonoBehaviour {
 			UpdateUI();
 
 			switch (coffeeLevel) {
-			case 1:
+			case 0:
 				movement.SetSlowSpeed();
 				break;
-			case 2:
+			case 1:
 				movement.SetNormalSpeed();
 				break;
-			case 3:
+			case 2:
 				movement.SetFastSpeed();
 				break;
-			case 4:
+			case 3:
 				movement.SetSuperFastSpeed();
 				break;
+			case 4:
+				gui.EndGame(movement.distance);
+				break;
 			}
+		} else if (coffeeLevel == 0 && (col.tag == "oldLady" || col.tag == "goblin" || col.tag == "elf")) {
+			gui.EndGame(movement.distance);
 		}
 	}
 
 	void UpdateUI() {
 		coffeLevelImage.UpdateLevels(coffeeLevel);
+	}
+
+	public void Reset() {
+		movement.Reset();
+		coffeeLevel = 1;
+		UpdateUI();
 	}
 }
