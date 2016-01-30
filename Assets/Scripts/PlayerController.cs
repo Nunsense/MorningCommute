@@ -42,12 +42,23 @@ public class PlayerController : MonoBehaviour {
 				movement.SetSuperFastSpeed();
 				break;
 			case 4:
-				gui.EndGame(movement.distance);
+				Die();
 				break;
 			}
-		} else if (coffeeLevel == 0 && (col.tag == "oldLady" || col.tag == "goblin" || col.tag == "elf")) {
-			gui.EndGame(movement.distance);
+		} else if (col.tag == "goblin") {
+			Die();
+		} else if (col.tag == "oldLady" || col.tag == "elf") {
+			if (coffeeLevel == 0) {
+				Die();
+			} else {
+				coffeeLevel--;
+				UpdateUI();
+			}
 		}
+	}
+
+	void Die() {
+		gui.EndGame(movement.distance / 100);
 	}
 
 	void UpdateUI() {
