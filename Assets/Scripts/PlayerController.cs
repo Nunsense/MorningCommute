@@ -4,11 +4,13 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 	float coffeeLevel;
 
-	void Start () {
+	public CoffeLevelImage caffeLevelImage;
+
+	void Start() {
 	
 	}
 
-	void Update () {
+	void Update() {
 	
 	}
 
@@ -16,6 +18,11 @@ public class PlayerController : MonoBehaviour {
 		if (col.tag == "coffeeBean") {
 			coffeeLevel += 10;
 			col.gameObject.SetActive(false);
+			UpdateUI();
 		}
+	}
+
+	void UpdateUI() {
+		caffeLevelImage.UpdateLevels(coffeeLevel);
 	}
 }
