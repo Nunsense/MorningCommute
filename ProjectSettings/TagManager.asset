@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ground
   - coffeeBean
+  - elf
+  - oldLady
+  - goblin
   layers:
   - Default
   - TransparentFX

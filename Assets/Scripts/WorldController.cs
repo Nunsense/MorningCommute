@@ -11,7 +11,7 @@ public class WorldController : MonoBehaviour {
 	int lastFloorIndex = 0;
 
 	void Awake () {
-		lastFloorX = - floorWidth;
+		lastFloorX = floorWidth * 2;
 		floors = GetComponentsInChildren<FloorController>();
 	}
 
