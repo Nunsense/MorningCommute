@@ -3,15 +3,14 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	[SerializeField] private float initialSpeed;
+	[SerializeField] private float normalSpeed;
 	[SerializeField] private float jumpForce;
 
-	[SerializeField] float slowSpeed;
-	[SerializeField] float normalSpeed;
-	[SerializeField] float fastSpeed;
-	[SerializeField] float superFastSpeed;
+	float slowSpeed;
+	float fastSpeed;
+	float superFastSpeed;
 
-	public int distance;
+	public float distance;
 
 	float currentSpeed;
 
@@ -32,12 +31,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Start() {
-		UpdateSpeed(initialSpeed);
-
-		slowSpeed = initialSpeed / 2;
-		normalSpeed = initialSpeed;
-		fastSpeed = initialSpeed * 2;
-		superFastSpeed = initialSpeed * 3;
+		slowSpeed = normalSpeed / 2;
+		fastSpeed = normalSpeed * 2;
+		superFastSpeed = normalSpeed * 3;
+		
 		currentSpeed = normalSpeed;
 	}
 
@@ -54,17 +51,16 @@ public class PlayerMovement : MonoBehaviour {
 				Jump();
 			}
 		}
+		
+		Vector3 pos = transform.position;
+		float prevX = pos.x;
+		pos.x += currentSpeed * Time.deltaTime;
+		distance += pos.x - prevX;
+		transform.position = pos;
 	}
 
 	void Jump() {
 		body.AddForce(transform.up * jumpForce);
-	}
-
-	void FixedUpdate() {
-		Vector3 pos = transform.position;
-		pos.x += currentSpeed * Time.fixedDeltaTime;
-		distance += (int)currentSpeed;
-		transform.position = pos;
 	}
 
 	void OnCollisionStay2D(Collision2D col) {
@@ -77,10 +73,6 @@ public class PlayerMovement : MonoBehaviour {
 		if (col.gameObject.tag == "ground") {
 			isGrounded = false;
 		}
-	}
-
-	void UpdateSpeed(float _speed) {
-		normalSpeed = _speed;
 	}
 
 	public void SetSlowSpeed() {
@@ -102,5 +94,8 @@ public class PlayerMovement : MonoBehaviour {
 	public void Reset() {
 		transform.position = origin;
 		distance = 0;
+		currentSpeed = normalSpeed;
+		body.Sleep();
+		body.WakeUp();
 	}
 }

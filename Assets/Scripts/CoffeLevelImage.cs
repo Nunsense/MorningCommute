@@ -12,7 +12,7 @@ public class CoffeLevelImage : MonoBehaviour {
 	Image image;
 	int level;
 
-	void Start() {
+	void Awake() {
 		image = GetComponent<Image>();
 	}
 

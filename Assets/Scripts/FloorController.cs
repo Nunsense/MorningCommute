@@ -8,7 +8,6 @@ public class FloorController : MonoBehaviour {
 	FloorLevel currentLevel;
 
 	void Awake() {
-		origin = transform.position;
 		levels = GetComponentsInChildren<FloorLevel>();
 	}
 
@@ -17,6 +16,10 @@ public class FloorController : MonoBehaviour {
 			levels[i].gameObject.SetActive(false);
 		}
 		ResetContent();
+	}
+	
+	public void Initialize() {
+		origin = transform.position;
 	}
 
 	public void Reset() {
@@ -33,3 +36,4 @@ public class FloorController : MonoBehaviour {
 		currentLevel.Reset();
 	}
 }
+

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7234276318b1f4899a653ac089f6f954
-timeCreated: 1454125514
+timeCreated: 1454153584
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -57,81 +57,106 @@ TextureImporter:
     - name: caffeine_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 553
-        width: 150
-        height: 207
+        x: 0
+        y: 570
+        width: 160
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 1, y: 103.5}
-        - {x: -72, y: 92.5}
-        - {x: -75, y: 87.5}
-        - {x: -75, y: 19.5}
-        - {x: -32, y: -94.5}
-        - {x: -21, y: -103.5}
-        - {x: 22, y: -103.5}
-        - {x: 75, y: -91.5}
-        - {x: 75, y: 99.5}
-        - {x: 65, y: 103.5}
+      - - {x: 75, y: 95}
+        - {x: -79, y: 95}
+        - {x: -79, y: 16}
+        - {x: -32, y: -95}
+        - {x: 51, y: -95}
+        - {x: 65, y: -89}
+        - {x: 63, y: -42}
+        - {x: 75, y: 22}
     - name: caffeine_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 369
-        width: 131
-        height: 182
+        x: 0
+        y: 380
+        width: 160
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -65.5, y: 2}
-        - {x: -23.5, y: -91}
-        - {x: -0.5, y: -91}
-        - {x: 56.5, y: -78}
-        - {x: 65.5, y: -76}
-        - {x: 65.5, y: 91}
-        - {x: -15.5, y: 91}
-        - {x: -65.5, y: 88}
+      - - {x: 44, y: 78}
+        - {x: 11, y: 78}
+        - {x: -56, y: 61}
+        - {x: -68, y: 53}
+        - {x: -68, y: -6}
+        - {x: -35, y: -95}
+        - {x: 39, y: -95}
+        - {x: 58, y: -86}
+        - {x: 67, y: -28}
+        - {x: 67, y: 49}
+      - - {x: -31, y: 95}
+        - {x: -31, y: 89}
+        - {x: -23, y: 76}
+        - {x: -13, y: 76}
+        - {x: 31, y: 88}
+        - {x: 39, y: 93}
+        - {x: 39, y: 95}
     - name: caffeine_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 185
-        width: 131
-        height: 182
+        x: 0
+        y: 190
+        width: 160
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -65.5, y: 2}
-        - {x: -23.5, y: -91}
-        - {x: -0.5, y: -91}
-        - {x: 56.5, y: -78}
-        - {x: 65.5, y: -76}
-        - {x: 65.5, y: 91}
-        - {x: -15.5, y: 91}
-        - {x: -65.5, y: 88}
+      - - {x: 11, y: 84}
+        - {x: -56, y: 67}
+        - {x: -68, y: 59}
+        - {x: -68, y: -1}
+        - {x: -33, y: -95}
+        - {x: 56, y: -95}
+        - {x: 67, y: -73}
+        - {x: 67, y: 81}
+        - {x: 59, y: 84}
+      - - {x: -22, y: 95}
+        - {x: -21, y: 90}
+        - {x: -18, y: 82}
+        - {x: -14, y: 82}
+        - {x: -6, y: 84}
+        - {x: 20, y: 92}
+        - {x: 22, y: 94}
+        - {x: 22, y: 95}
     - name: caffeine_3
       rect:
         serializedVersion: 2
-        x: 14
-        y: 1
-        width: 131
-        height: 182
+        x: 0
+        y: 0
+        width: 160
+        height: 190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -65.5, y: 2}
-        - {x: -23.5, y: -91}
-        - {x: -0.5, y: -91}
-        - {x: 56.5, y: -78}
-        - {x: 65.5, y: -76}
-        - {x: 65.5, y: 91}
-        - {x: -15.5, y: 91}
-        - {x: -65.5, y: 88}
+      - - {x: 11, y: 90}
+        - {x: -56, y: 73}
+        - {x: -68, y: 64}
+        - {x: -68, y: 6}
+        - {x: -31, y: -95}
+        - {x: 11, y: -95}
+        - {x: 58, y: -74}
+        - {x: 67, y: -6}
+        - {x: 67, y: 58}
+        - {x: 44, y: 90}
+      - - {x: -20, y: 95}
+        - {x: -20, y: 93}
+        - {x: -18, y: 88}
+        - {x: -11, y: 88}
+        - {x: -6, y: 89}
+        - {x: 1, y: 93}
+        - {x: 1, y: 95}
     outline: []
   spritePackingTag: 
   userData: 

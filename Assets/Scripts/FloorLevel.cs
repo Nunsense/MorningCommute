@@ -65,5 +65,9 @@ public class FloorLevel : MonoBehaviour {
 				goblin.gameObject.SetActive(false);
 			}
 		}
+		
+		if (oldLady) oldLady.Reset();
+		if (goblin) goblin.Reset();
+		if (elf) elf.Reset();
 	}
 }

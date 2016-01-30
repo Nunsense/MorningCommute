@@ -6,6 +6,14 @@ public class Goblin : MonoBehaviour {
 	float patrolDistance = 5;
 	float originX = 0;
 	float targetX = 0;
+	
+	Rigidbody2D body;
+	BoxCollider2D coll;
+
+	void Awake() {
+		body = GetComponent<Rigidbody2D>();
+		coll = GetComponent<BoxCollider2D>();
+	}
 
 	void Start() {
 		originX = transform.position.x;
@@ -36,5 +44,10 @@ public class Goblin : MonoBehaviour {
 		targetX = originX;
 		originX = temp;
 		speed = -speed;
+	}
+	
+	public void Reset() {
+		coll.isTrigger = false;
+		body.isKinematic = false;
 	}
 }

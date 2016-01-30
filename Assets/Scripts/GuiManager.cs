@@ -28,9 +28,11 @@ public class GuiManager : MonoBehaviour {
 		Time.timeScale = 1;
 	}
 
-	public void EndGame(int distance) {
+	public void EndGame(float distance) {
 		Time.timeScale = 0;
-		finalDistance.text = distance + "m";
+		int dist = (int)distance;
+		finalDistance.text = dist + "m";
+		world.EndGame(dist);
 		end.gameObject.SetActive(true);
 	}
 
