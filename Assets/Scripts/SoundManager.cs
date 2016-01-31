@@ -117,6 +117,10 @@ public class SoundManager : MonoBehaviour {
 		menuMusicSource.Stop();
 		gameMusicSource.Play();
 	}
+	
+	public void StopGameMusic() {
+		gameMusicSource.Stop();
+	}
 
 	private IEnumerator transition() {
 		transitionsFxSource.Play();

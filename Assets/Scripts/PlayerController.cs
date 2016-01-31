@@ -22,11 +22,7 @@ public class PlayerController : MonoBehaviour {
 		coffeeLevel = 1;
 		movement = GetComponent<PlayerMovement>();
 	}
-
-	void Start() {
 	
-	}
-
 	void Update() {
 		if(transform.position.y < -0.5f) {
 			Die();
@@ -152,8 +148,9 @@ public class PlayerController : MonoBehaviour {
 
 	public void Reset() {
 		isDead = false;
-		movement.Reset();
+		prevCoffeeLevel = 1;
 		coffeeLevel = 1;
+		movement.Reset();
 		movement.SetNoSpeed();
 		UpdateUI();
 		anim.SetBool("grounded", false);

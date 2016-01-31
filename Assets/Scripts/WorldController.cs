@@ -69,10 +69,13 @@ public class WorldController : MonoBehaviour {
 	}
 
 	public void EndGame(int distance) {
+		cameraController.SetNoneBlur();
 		SetTopDistance(distance);
 	}
 
 	public void Reset() {
+		SoundManager.instance.playButton();
+		SoundManager.instance.StopGameMusic();
 		paralaxing.Reset();
 		
 		for(int i = 0; i < floors.Length; i++) {
@@ -93,6 +96,7 @@ public class WorldController : MonoBehaviour {
 		} else {
 			flag.gameObject.SetActive(false);
 		}
+		cameraController.SetNoneBlur();
 	}
 	
 	public int GetTopDistnce() {
@@ -105,12 +109,14 @@ public class WorldController : MonoBehaviour {
 	}
 	
 	public void TransformUp() {
+		paralaxing.SetSlow();
 		for(int i = 0; i < floors.Length; i++) {
 			floors[i].TransformUp();
 		}
 	}
 	
 	public void TransformDown() {
+		paralaxing.SetNormal();
 		for(int i = 0; i < floors.Length; i++) {
 			floors[i].TransformDown();
 		}

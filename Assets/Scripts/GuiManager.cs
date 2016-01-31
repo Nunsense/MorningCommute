@@ -26,7 +26,6 @@ public class GuiManager : MonoBehaviour {
 	}
 
 	public void EndGame(float distance) {
-	Debug.Log("END GAME");
 		Time.timeScale = 0;
 		SoundManager.instance.playMenuMusic();
 		int dist = (int)distance;

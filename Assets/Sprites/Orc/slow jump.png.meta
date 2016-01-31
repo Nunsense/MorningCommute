@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: eee7b024228cb45a388ab371ac58a7f8
+timeCreated: 1454250093
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: slow jump_0
+    21300002: slow jump_1
+    21300004: slow jump_2
+    21300006: slow jump_3
+    21300008: slow jump_4
+    21300010: slow jump_5
+    21300012: slow jump_6
+    21300014: slow jump_7
+    21300016: slow jump_8
+    21300018: slow jump_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: slow jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 877
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 877
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 877
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 726
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 726
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 726
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    - name: slow jump_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 140
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 74.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: -15.5}
+        - {x: -27, y: -74.5}
+        - {x: 69, y: -74.5}
+        - {x: 70, y: -59.5}
+        - {x: 70, y: 40.5}
+        - {x: 41, y: 74.5}
+    - name: slow jump_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 575
+        width: 140
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 74.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: -15.5}
+        - {x: -27, y: -74.5}
+        - {x: 69, y: -74.5}
+        - {x: 70, y: -59.5}
+        - {x: 70, y: 40.5}
+        - {x: 41, y: 74.5}
+    - name: slow jump_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 575
+        width: 140
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 74.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: -15.5}
+        - {x: -27, y: -74.5}
+        - {x: 69, y: -74.5}
+        - {x: 70, y: -59.5}
+        - {x: 70, y: 40.5}
+        - {x: 41, y: 74.5}
+    - name: slow jump_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 424
+        width: 140
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 73.5}
+        - {x: -70, y: 56.5}
+        - {x: -70, y: 19.5}
+        - {x: -69, y: 15.5}
+        - {x: -9, y: -73.5}
+        - {x: 63, y: -73.5}
+        - {x: 70, y: -25.5}
+        - {x: 70, y: 43.5}
+        - {x: 44, y: 73.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

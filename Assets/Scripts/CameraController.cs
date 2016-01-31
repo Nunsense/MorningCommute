@@ -11,9 +11,15 @@ public class CameraController : MonoBehaviour {
 	float yScale = 0.09f;
 	float xScale = 4.5f;
 	MotionBlur blur;
+	Bloom bloom;
+	
+	float bloomTime = 0.2f;
+	float bloomingeTimeElapsed;
+	bool blooming = false;
 
 	void Awake() {
 		blur = GetComponent<MotionBlur>();
+		bloom = GetComponent<Bloom>();
 		origin = transform.position;
 		posOffset = target.position - origin;
 	}
@@ -28,6 +34,16 @@ public class CameraController : MonoBehaviour {
 		posTemp.z = -8;
 	
 		transform.position = posTemp;
+		
+		if(blooming) {
+			bloomingeTimeElapsed += Time.deltaTime;
+			if(bloomingeTimeElapsed >= bloomTime) {
+				blooming = false;
+				transform.localScale = Vector3.one;
+			}
+			
+			bloom.bloomIntensity = Mathf.Lerp(bloom.bloomIntensity, 1.5f, bloomingeTimeElapsed / bloomTime);
+		}
 	}
 	
 	public void Reset() {
@@ -35,14 +51,21 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	public void SetMaxBlur() {
-		blur.blurAmount = 0.5f;
+		bloom.bloomIntensity = 0;
+		bloom.enabled = true;
+		blooming = true;
+		blur.blurAmount = 0.6f;
+		blur.enabled = true;
 	}
 	
 	public void SetMinBlur() {
+		bloom.enabled = false;
 		blur.blurAmount = 0.3f;
+		blur.enabled = true;
 	}
 	
 	public void SetNoneBlur() {
-		blur.blurAmount = 0;
+		blur.enabled = false;
+		bloom.enabled = false;
 	}
 }

@@ -37,14 +37,14 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		if(isGrounded) {
-			if(Input.GetKeyDown(KeyCode.Space)) {
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetButton("Fire1")) {
 				controller.TriggerJump();
 				canDoubleJump = true;
 				isJumping = true;
 				Jump();
 			}	
 		} else {
-			if(controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+			if(controller.GetCoffee() > 0 && (Input.GetKeyDown(KeyCode.Space) ||  Input.GetButton("Fire1")) && canDoubleJump) {
 				controller.TriggerJump();
 				canDoubleJump = false;
 				controller.ConsumeCoffee();
