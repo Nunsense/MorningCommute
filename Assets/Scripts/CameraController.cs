@@ -35,11 +35,11 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	public void SetMaxBlur() {
-		blur.blurAmount = 0.8f;
+		blur.blurAmount = 0.5f;
 	}
 	
 	public void SetMinBlur() {
-		blur.blurAmount = 0.5f;
+		blur.blurAmount = 0.3f;
 	}
 	
 	public void SetNoneBlur() {

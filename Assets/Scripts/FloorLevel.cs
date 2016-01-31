@@ -6,70 +6,72 @@ public class FloorLevel : MonoBehaviour {
 	OldLady oldLady;
 	Pigeon elf;
 	Goblin goblin;
+	Enemy[] enemies;
 
 	void Awake() {
 		coffeeBeans = GetComponentsInChildren<CoffeeBean>();
-		oldLady = gameObject.GetComponentInChildren<OldLady>();
-		elf = gameObject.GetComponentInChildren<Pigeon>();
-		goblin = gameObject.GetComponentInChildren<Goblin>();
+		enemies = GetComponentsInChildren<Enemy>();
 	}
 
 	void Start() {
 	}
 
 	void HideEnemies() {
-		if (oldLady)
-			oldLady.gameObject.SetActive(false);
-		if (elf)
-			elf.gameObject.SetActive(false);
-		if (goblin)
-			goblin.gameObject.SetActive(false);
+		for(int i = 0; i < enemies.Length; i++) {
+			enemies[i].gameObject.SetActive(false);
+		}
 	}
 
 	public void Reset() {
-		for (int i = 0; i < coffeeBeans.Length; i++) {
-			coffeeBeans[i].gameObject.SetActive(true);
+		for(int i = 0; i < coffeeBeans.Length; i++) {
+			coffeeBeans[i].gameObject.SetActive(false);
+		}
+		
+		int total = 0;
+		int maxTries = coffeeBeans.Length;
+		while(total < 2 && maxTries > 0) {
+			int i = Random.Range(0, coffeeBeans.Length);
+			if(!coffeeBeans[i].gameObject.activeSelf) {
+				coffeeBeans[i].Reset();
+				coffeeBeans[i].gameObject.SetActive(true);
+				total++;
+			}
+			maxTries--;
 		}
 
 		HideEnemies();
 		float rand = Random.value;
-		if (rand < 0.33f && oldLady) {
-			if (rand < 0.1f) {
-				oldLady.Reset();
-				oldLady.gameObject.SetActive(true);
-			} else {
-				oldLady.gameObject.SetActive(false);
-			}
-		} else if (rand < 0.66f && elf) {
-			if (rand < 0.55f) {
-				elf.Reset();
-				elf.gameObject.SetActive(true);
-			} else {
-				elf.gameObject.SetActive(false);
-			}
-		} else if (goblin) {
-			if (rand < 0.88f) {
-				goblin.Reset();
-				goblin.gameObject.SetActive(true);
-			} else {
-				goblin.gameObject.SetActive(false);
+		if(rand < .5f) { // one enemy
+			int i = Random.Range(0, enemies.Length);
+			enemies[i].Reset();
+			enemies[i].gameObject.SetActive(true);
+		} else { // two enemy
+			total = 0;
+			maxTries = enemies.Length;
+			while(total < 2 && maxTries > 0) {
+				int i = Random.Range(0, enemies.Length);
+				if(!enemies[i].gameObject.activeSelf) {
+					enemies[i].Reset();
+					enemies[i].gameObject.SetActive(true);
+					total++;
+				}
 			}
 		}
-		
-		if (oldLady) oldLady.Reset();
-		if (goblin) goblin.Reset();
-		if (elf) elf.Reset();
-	}	
+	}
 	
 	public void TransformUp() {
-		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformUp();
-		if (goblin && goblin.gameObject.activeSelf) goblin.TransformUp();
-		if (elf && elf.gameObject.activeSelf) elf.TransformUp();
+		for(int i = 0; i < enemies.Length; i++) {
+			Enemy enem = enemies[i];
+			if(enem && enem.gameObject.activeSelf)
+				enem.TransformUp();
+		}
 	}
 	
 	public void TransformDown() {
-		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformDown();
-		if (goblin && goblin.gameObject.activeSelf) goblin.TransformDown();
-		if (elf && elf.gameObject.activeSelf) elf.TransformDown();
+		for(int i = 0; i < enemies.Length; i++) {
+			Enemy enem = enemies[i];
+			if(enem && enem.gameObject.activeSelf)
+				enem.TransformDown();
+		}
 	}
 }

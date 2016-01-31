@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour {
 	float coffeeTimeElapsed;
 	float coffeeTime = 5; //5 seconds
 	Animator anim;
+	bool isDead;
 
 	void Awake() {
+		isDead = false;
 		coffeeTimeElapsed = coffeeTime;
 		anim = GetComponent<Animator>();
 		prevCoffeeLevel = 1;
@@ -42,7 +44,6 @@ public class PlayerController : MonoBehaviour {
 			SoundManager.instance.playCoffee();
 			coffeeLevel += 1;
 			col.gameObject.SetActive(false);
-
 			if(coffeeLevel == 4)
 				Die();
 			else
@@ -52,39 +53,42 @@ public class PlayerController : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D col) {
 		if(col.collider.tag == "goblin") {
-			col.collider.isTrigger = true;
 			if(coffeeLevel == 3) {
+				col.collider.isTrigger = true;
+				col.rigidbody.isKinematic = true;
 				SoundManager.instance.playPunch();
-				col.rigidbody.AddForce((col.transform.position - transform.position) * Random.Range(400, 600) + col.transform.up * Random.Range(400, 600));
+				col.rigidbody.AddForce((col.transform.position - transform.position) * Random.Range(400, 600) + col.transform.up * Random.Range(4000, 6000));
 			} else {
 				SoundManager.instance.playGoblin();
 				Die();
 			}
 		} else if(col.collider.tag == "oldLady") {
-			col.collider.isTrigger = true;
 			if(coffeeLevel == 0) {
 				SoundManager.instance.playOldLady();
 				Die();
 			} else if(coffeeLevel == 3) {
+				col.collider.isTrigger = true;
 				SoundManager.instance.playPunch();
 				col.rigidbody.AddForce((col.transform.position - transform.position) * Random.Range(400, 600) + col.transform.up * Random.Range(400, 600));
 			} else {
 				SoundManager.instance.playOldLady();
+				col.collider.isTrigger = true;
 				col.rigidbody.isKinematic = true;
 				coffeeLevel--;
 				UpdateSpeed();
 				UpdateUI();
 			}
-		} else if(col.collider.tag == "elf") {
-			col.collider.isTrigger = true;
+		} else if(col.collider.tag == "pigeon") {
 			if(coffeeLevel == 0) {
-				SoundManager.instance.playOldLady();
+				SoundManager.instance.playPigeon();
 				Die();
 			} else if(coffeeLevel == 3) {
+				col.collider.isTrigger = true;
 				SoundManager.instance.playPunch();
 				col.rigidbody.AddForce((col.transform.position - transform.position) * Random.Range(400, 600) + col.transform.up * Random.Range(400, 600));
 			} else {
 				SoundManager.instance.playPigeon();
+				col.collider.isTrigger = true;
 				col.rigidbody.isKinematic = true;
 				coffeeLevel--;
 				UpdateSpeed();
@@ -113,7 +117,7 @@ public class PlayerController : MonoBehaviour {
 			cameraController.SetNoneBlur();
 			break;
 		case 1:
-			if (prevCoffeeLevel == 0)
+			if(prevCoffeeLevel == 0)
 				world.TransformDown();
 			movement.SetNormalSpeed();
 			cameraController.SetNoneBlur();
@@ -132,11 +136,14 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Die() {
-		anim.SetTrigger("dead");
+		if(!isDead) {
+			anim.SetTrigger("dead");
+			isDead = true;
+		}
 	}
 	
 	void Dead() {
-		gui.EndGame(movement.distance);
+		gui.EndGame(transform.position.x);
 	}
 
 	void UpdateUI() {
@@ -144,12 +151,18 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Reset() {
+		isDead = false;
 		movement.Reset();
 		coffeeLevel = 1;
 		movement.SetNoSpeed();
 		UpdateUI();
 		anim.SetBool("grounded", false);
 		anim.SetTrigger("wake_up");
+	}
+	
+	public void TriggerFall() {
+		anim.SetTrigger("fall");
+		anim.SetBool("grounded", false);
 	}
 	
 	public void TriggerJump() {
@@ -166,7 +179,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void ConsumeCoffee() {
-		if (coffeeLevel > 0) {
+		if(coffeeLevel > 0) {
 			coffeeLevel--;
 			UpdateSpeed();
 			UpdateUI();

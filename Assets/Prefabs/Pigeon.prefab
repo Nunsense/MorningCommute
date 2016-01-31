@@ -15,7 +15,7 @@ GameObject:
   - 212: {fileID: 21252542}
   m_Layer: 8
   m_Name: Pigeon
-  m_TagString: elf
+  m_TagString: pigeon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473e779e78808497e8ba5fa7afb6adb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolDistance: 4
 --- !u!212 &21252542
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -130,11 +131,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: elf
+      value: pigeon
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: patrolDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

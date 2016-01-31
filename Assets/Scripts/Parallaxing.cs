@@ -34,9 +34,7 @@ public class Parallaxing : MonoBehaviour {
 			pos.x -= diff * parallaxScales[i];
 
 			if(playerX - pos.x > distance) {
-				Debug.Log(playerX + " - " +  pos.x);
 				pos.x += distance * 2 + (distance - (playerX - pos.x ));
-				Debug.Log(pos.x);
 			}
 			backgrounds[i].position = pos;
 		}

@@ -18,6 +18,7 @@ public class WorldController : MonoBehaviour {
 	int coffeLevels;
 
 	void Awake() {
+		PlayerPrefs.DeleteAll();
 		movement = player.GetComponent<PlayerMovement>();
 		controller = player.GetComponent<PlayerController>();
 	}
@@ -58,7 +59,7 @@ public class WorldController : MonoBehaviour {
 			pos.x = lastFloorX + floorWidth;
 			pos.y = 0;
 			floor.transform.position = pos;
-			floor.ResetContent(movement.distance);
+			floor.ResetContent(player.position.x);
 			if(controller.GetCoffee() == 0) {
 				floor.TransformUp();
 			} else {
@@ -68,7 +69,7 @@ public class WorldController : MonoBehaviour {
 	}
 
 	public void EndGame(int distance) {
-		SetTopDistnce(distance);
+		SetTopDistance(distance);
 	}
 
 	public void Reset() {
@@ -88,6 +89,7 @@ public class WorldController : MonoBehaviour {
 			pos.x = top;
 			flag.transform.position = pos;
 			flag.gameObject.SetActive(true);
+			flag.SetDistance(top);
 		} else {
 			flag.gameObject.SetActive(false);
 		}
@@ -97,7 +99,7 @@ public class WorldController : MonoBehaviour {
 		return PlayerPrefs.GetInt("top_distance");
 	}
 	
-	public void SetTopDistnce(int dist) {
+	public void SetTopDistance(int dist) {
 		if(GetTopDistnce() < dist)
 			PlayerPrefs.SetInt("top_distance", dist);
 	}

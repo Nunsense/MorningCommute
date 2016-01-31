@@ -3,23 +3,19 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	[SerializeField] private float normalSpeed;
-	[SerializeField] private float jumpForce;
-
+	[SerializeField]
+	private float normalSpeed;
+	[SerializeField]
+	private float jumpForce;
 	float slowSpeed;
 	float fastSpeed;
 	float superFastSpeed;
-
-	public float distance;
-
 	float currentSpeed;
-
 	Rigidbody2D body;
 	bool isGrounded;
+	bool isJumping;
 	bool canDoubleJump;
-
 	Vector3 origin;
-
 	PlayerController controller;
 
 	void Awake() {
@@ -27,6 +23,7 @@ public class PlayerMovement : MonoBehaviour {
 		origin = transform.position;
 		canDoubleJump = false;
 		isGrounded = false;
+		isJumping = false;
 		body = GetComponent<Rigidbody2D>();
 	}
 
@@ -39,14 +36,15 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Update() {
-		if (isGrounded) {
-			if (Input.GetKeyDown(KeyCode.Space)) {
+		if(isGrounded) {
+			if(Input.GetKeyDown(KeyCode.Space)) {
 				controller.TriggerJump();
 				canDoubleJump = true;
+				isJumping = true;
 				Jump();
 			}	
 		} else {
-			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+			if(controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
 				controller.TriggerJump();
 				canDoubleJump = false;
 				controller.ConsumeCoffee();
@@ -57,7 +55,6 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 pos = transform.position;
 		float prevX = pos.x;
 		pos.x += currentSpeed * Time.deltaTime;
-		distance += pos.x - prevX;
 		transform.position = pos;
 	}
 
@@ -70,15 +67,18 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D col) {
-		if (col.gameObject.tag == "ground") {
+		if(col.gameObject.tag == "ground") {
 			isGrounded = true;
+			isJumping = false;
 			controller.TriggerGrounded();
 		}
 	}
 
 	void OnCollisionExit2D(Collision2D col) {
-		if (col.gameObject.tag == "ground") {
+		if(col.gameObject.tag == "ground") {
 			isGrounded = false;
+			if(!isJumping)
+				controller.TriggerFall();
 		}
 	}
 
@@ -112,7 +112,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void Reset() {
 		transform.position = origin;
-		distance = 0;
 		currentSpeed = normalSpeed;
 		body.Sleep();
 		body.WakeUp();

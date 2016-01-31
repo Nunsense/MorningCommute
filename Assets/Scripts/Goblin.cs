@@ -1,25 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Goblin : MonoBehaviour {
+public class Goblin : Enemy {
 	float speed = -0.7f;
-	float patrolDistance = -5;
+	public float patrolDistance = -5;
 	float originX = 0;
 	float targetX = 0;
-	Animator anim;
-	Rigidbody2D body;
-	BoxCollider2D coll;
-	Vector3 origin;
-
-	void Awake() {
-		body = GetComponent<Rigidbody2D>();
-		coll = GetComponent<BoxCollider2D>();
-	}
 	
 	void Start() {
-		anim = GetComponent<Animator>();
-	
-		origin = transform.localPosition;
 		originX = transform.position.x;
 		targetX = originX + patrolDistance;
 	}
@@ -49,20 +37,5 @@ public class Goblin : MonoBehaviour {
 		originX = temp;
 		speed = -speed;
 		transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
-	}
-	
-	public void Reset() {
-		coll.isTrigger = false;
-		body.isKinematic = false;
-		transform.localPosition = origin;
-	}
-	
-	public void TransformUp() {
-		anim.SetTrigger("up");
-	}
-	
-	public void TransformDown() {
-		anim.ResetTrigger("up");
-		anim.SetTrigger("down");
 	}
 }

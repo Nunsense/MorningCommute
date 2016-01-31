@@ -2,14 +2,10 @@
 using System.Collections;
 
 public class CoffeeBean : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void Reset() {
+		Vector3 rot = Random.rotationUniform.eulerAngles;
+		rot.y = 0;
+		rot.x = 0;
+		transform.eulerAngles = rot;
 	}
 }

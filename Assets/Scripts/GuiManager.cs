@@ -13,10 +13,6 @@ public class GuiManager : MonoBehaviour {
 		end.gameObject.SetActive(false);
 	}
 
-	void Update() {
-	
-	}
-
 	public void Pause() {
 		SoundManager.instance.playMenuMusic();
 		Time.timeScale = 0;
@@ -30,8 +26,9 @@ public class GuiManager : MonoBehaviour {
 	}
 
 	public void EndGame(float distance) {
-		SoundManager.instance.playMenuMusic();
+	Debug.Log("END GAME");
 		Time.timeScale = 0;
+		SoundManager.instance.playMenuMusic();
 		int dist = (int)distance;
 		finalDistance.text = dist + "m";
 		world.EndGame(dist);

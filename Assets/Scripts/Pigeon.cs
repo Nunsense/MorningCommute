@@ -1,25 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pigeon : MonoBehaviour {
+public class Pigeon : Enemy {
 	float speed = 1.7f;
-	float patrolDistance = 4;
+	public float patrolDistance = 4;
 	float originY = 0;
 	float targetY = 0;
-	Animator anim;
-	Rigidbody2D body;
-	BoxCollider2D coll;
-	Vector3 origin;
-	
-	void Awake() {
-		body = GetComponent<Rigidbody2D>();
-		coll = GetComponent<BoxCollider2D>();
-	}
-	
+
 	void Start() {
-		anim = GetComponent<Animator>();
-		
-		origin = transform.localPosition;
 		originY = transform.position.y;
 		targetY = originY + patrolDistance;
 	}
@@ -49,20 +37,4 @@ public class Pigeon : MonoBehaviour {
 		originY = temp;
 		speed = -speed;
 	}
-	
-	public void Reset() {
-		coll.isTrigger = false;
-		body.isKinematic = false;
-		transform.localPosition = origin;
-	}
-	
-	public void TransformUp() {
-		anim.SetTrigger("up");
-	}
-	
-	public void TransformDown() {
-		anim.ResetTrigger("up");
-		anim.SetTrigger("down");
-	}
-	
 }
