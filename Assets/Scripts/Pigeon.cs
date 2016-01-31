@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Goblin : MonoBehaviour {
-	float speed = -0.7f;
-	float patrolDistance = -5;
-	float originX = 0;
-	float targetX = 0;
+public class Pigeon : MonoBehaviour {
+	float speed = 1.7f;
+	float patrolDistance = 4;
+	float originY = 0;
+	float targetY = 0;
 	Animator anim;
 	Rigidbody2D body;
 	BoxCollider2D coll;
 	Vector3 origin;
-
+	
 	void Awake() {
 		body = GetComponent<Rigidbody2D>();
 		coll = GetComponent<BoxCollider2D>();
@@ -18,37 +18,36 @@ public class Goblin : MonoBehaviour {
 	
 	void Start() {
 		anim = GetComponent<Animator>();
-	
+		
 		origin = transform.localPosition;
-		originX = transform.position.x;
-		targetX = originX + patrolDistance;
+		originY = transform.position.y;
+		targetY = originY + patrolDistance;
 	}
-
+	
 	void FixedUpdate() {
 		Vector3 pos = transform.position;
 		if(speed > 0) {
-			if(pos.x < targetX) {
-				pos.x += speed * Time.fixedDeltaTime;
+			if(pos.y < targetY) {
+				pos.y += speed * Time.fixedDeltaTime;
 				transform.position = pos;
 			} else {
 				Turn();
 			}
 		} else {
-			if(pos.x > targetX) {
-				pos.x += speed * Time.fixedDeltaTime;
+			if(pos.y > targetY) {
+				pos.y += speed * Time.fixedDeltaTime;
 				transform.position = pos;
 			} else {
 				Turn();
 			}
 		}
 	}
-
+	
 	void Turn() {
-		float temp = targetX;
-		targetX = originX;
-		originX = temp;
+		float temp = targetY;
+		targetY = originY;
+		originY = temp;
 		speed = -speed;
-		transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
 	}
 	
 	public void Reset() {
@@ -65,4 +64,5 @@ public class Goblin : MonoBehaviour {
 		anim.ResetTrigger("up");
 		anim.SetTrigger("down");
 	}
+	
 }

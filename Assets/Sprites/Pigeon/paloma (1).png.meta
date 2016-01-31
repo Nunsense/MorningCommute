@@ -1,0 +1,597 @@
+fileFormatVersion: 2
+guid: 5a5b79cb71e044f4c8dc3115d51e2cd2
+timeCreated: 1454236268
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: paloma (1)_0
+    21300002: paloma (1)_1
+    21300004: paloma (1)_2
+    21300006: paloma (1)_3
+    21300008: paloma (1)_4
+    21300010: paloma (1)_5
+    21300012: paloma (1)_6
+    21300014: paloma (1)_7
+    21300016: paloma (1)_8
+    21300018: paloma (1)_9
+    21300020: paloma (1)_10
+    21300022: paloma (1)_11
+    21300024: paloma (1)_12
+    21300026: paloma (1)_13
+    21300028: paloma (1)_14
+    21300030: paloma (1)_15
+    21300032: paloma (1)_16
+    21300034: paloma (1)_17
+    21300036: paloma (1)_18
+    21300038: paloma (1)_19
+    21300040: paloma (1)_20
+    21300042: paloma (1)_21
+    21300044: paloma (1)_22
+    21300046: paloma (1)_23
+    21300048: paloma (1)_24
+    21300050: paloma (1)_25
+    21300052: paloma (1)_26
+    21300054: paloma (1)_27
+    21300056: paloma (1)_28
+    21300058: paloma (1)_29
+    21300060: paloma (1)_30
+    21300062: paloma (1)_31
+    21300064: paloma (1)_32
+    21300066: paloma (1)_33
+    21300068: paloma (1)_34
+    21300070: paloma (1)_35
+    21300072: paloma (1)_36
+    21300074: paloma (1)_37
+    21300076: paloma (1)_38
+    21300078: paloma (1)_39
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: paloma (1)_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 552
+        width: 49
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_1
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 552
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_2
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 553
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_3
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 552
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_4
+      rect:
+        serializedVersion: 2
+        x: 2826
+        y: 552
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_5
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 552
+        width: 98
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_6
+      rect:
+        serializedVersion: 2
+        x: 4195
+        y: 552
+        width: 95
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_7
+      rect:
+        serializedVersion: 2
+        x: 4887
+        y: 552
+        width: 120
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_8
+      rect:
+        serializedVersion: 2
+        x: 5579
+        y: 552
+        width: 120
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_9
+      rect:
+        serializedVersion: 2
+        x: 6261
+        y: 552
+        width: 129
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_10
+      rect:
+        serializedVersion: 2
+        x: 6952
+        y: 552
+        width: 134
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 370
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_12
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 370
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_13
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 370
+        width: 99
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_14
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 370
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_15
+      rect:
+        serializedVersion: 2
+        x: 2801
+        y: 370
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_16
+      rect:
+        serializedVersion: 2
+        x: 3496
+        y: 370
+        width: 99
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_17
+      rect:
+        serializedVersion: 2
+        x: 4188
+        y: 370
+        width: 99
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_18
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 370
+        width: 102
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_19
+      rect:
+        serializedVersion: 2
+        x: 5541
+        y: 370
+        width: 140
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_20
+      rect:
+        serializedVersion: 2
+        x: 6239
+        y: 370
+        width: 141
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_21
+      rect:
+        serializedVersion: 2
+        x: 6935
+        y: 370
+        width: 137
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_22
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 346
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_23
+      rect:
+        serializedVersion: 2
+        x: 5628
+        y: 209
+        width: 106
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_24
+      rect:
+        serializedVersion: 2
+        x: 6303
+        y: 212
+        width: 126
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.9019775, y: 21.860905}
+        - {x: -14.901978, y: 18.860905}
+        - {x: -17.901978, y: 10.860905}
+        - {x: -17.901978, y: -8.139095}
+        - {x: -6.9019775, y: -20.139095}
+        - {x: -3.9019775, y: -21.139095}
+        - {x: 8.098022, y: -21.139095}
+        - {x: 19.098022, y: -10.139095}
+        - {x: 19.098022, y: 8.860905}
+        - {x: 6.0980225, y: 21.860905}
+    - name: paloma (1)_25
+      rect:
+        serializedVersion: 2
+        x: 6998
+        y: 216
+        width: 127
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.97937, y: 18.99979}
+        - {x: 2.97937, y: 21.99979}
+        - {x: -7.02063, y: 21.99979}
+        - {x: -10.02063, y: 17.99979}
+        - {x: -18.02063, y: 1.9997902}
+        - {x: -18.02063, y: -13.00021}
+        - {x: -12.02063, y: -21.00021}
+        - {x: 7.97937, y: -21.00021}
+        - {x: 18.97937, y: -14.00021}
+        - {x: 18.97937, y: 4.99979}
+        - {x: 14.97937, y: 2.9997902}
+    - name: paloma (1)_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 188
+        width: 123
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_27
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 188
+        width: 99
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_28
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 188
+        width: 99
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_29
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 188
+        width: 101
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_30
+      rect:
+        serializedVersion: 2
+        x: 2797
+        y: 188
+        width: 116
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_31
+      rect:
+        serializedVersion: 2
+        x: 3507
+        y: 198
+        width: 95
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_32
+      rect:
+        serializedVersion: 2
+        x: 4220
+        y: 205
+        width: 77
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_33
+      rect:
+        serializedVersion: 2
+        x: 4901
+        y: 212
+        width: 99
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_34
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 37
+        width: 115
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.368135, y: 22.034687}
+        - {x: -16.368135, y: 17.034687}
+        - {x: -16.368135, y: -11.965313}
+        - {x: -5.3681355, y: -20.965313}
+        - {x: 4.6318645, y: -20.965313}
+        - {x: 17.631865, y: -7.965313}
+        - {x: 17.631865, y: 6.034687}
+        - {x: 2.6318645, y: 22.034687}
+    - name: paloma (1)_35
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 37
+        width: 106
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_36
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 30
+        width: 105
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: paloma (1)_37
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 58
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.432617, y: 19.513832}
+        - {x: -18.432617, y: 13.513832}
+        - {x: -18.432617, y: -10.486168}
+        - {x: -16.432617, y: -18.486168}
+        - {x: 10.567383, y: -18.486168}
+        - {x: 19.567383, y: -10.486168}
+        - {x: 19.567383, y: 19.513832}
+    - name: paloma (1)_38
+      rect:
+        serializedVersion: 2
+        x: 2857
+        y: 58
+        width: 130
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.448608, y: 20.013832}
+        - {x: -1.5513916, y: 20.013832}
+        - {x: -18.551392, y: 12.013832}
+        - {x: -18.551392, y: -2.986168}
+        - {x: -13.551392, y: -18.986168}
+        - {x: 11.448608, y: -18.986168}
+        - {x: 17.448608, y: -16.986168}
+        - {x: 19.448608, y: -7.986168}
+        - {x: 19.448608, y: 15.013832}
+      - - {x: -18.551392, y: 20.013832}
+        - {x: -18.551392, y: 17.013832}
+        - {x: -11.551392, y: 17.013832}
+        - {x: -9.551392, y: 19.013832}
+        - {x: -9.551392, y: 20.013832}
+    - name: paloma (1)_39
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 68
+        width: 130
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.475708, y: 17.861046}
+        - {x: -2.524292, y: 17.861046}
+        - {x: -11.524292, y: 12.861046}
+        - {x: -18.524292, y: 7.861046}
+        - {x: -18.524292, y: -9.138954}
+        - {x: -17.524292, y: -17.138954}
+        - {x: 13.475708, y: -17.138954}
+        - {x: 17.475708, y: -14.138954}
+        - {x: 19.475708, y: -6.138954}
+        - {x: 19.475708, y: 13.861046}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

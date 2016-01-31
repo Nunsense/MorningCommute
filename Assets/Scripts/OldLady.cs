@@ -6,14 +6,16 @@ public class OldLady : MonoBehaviour {
 	Rigidbody2D body;
 	BoxCollider2D coll;
 	Animator anim;
+	Vector3 origin;
 	
 	void Awake() {
 		body = GetComponent<Rigidbody2D>();
 		coll = GetComponent<BoxCollider2D>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Start() {
-		anim = GetComponent<Animator>();
+		origin = transform.localPosition;
 	}
 
 	void FixedUpdate() {
@@ -25,6 +27,7 @@ public class OldLady : MonoBehaviour {
 	public void Reset() {
 		coll.isTrigger = false;
 		body.isKinematic = false;
+		transform.localPosition = origin;
 	}
 	
 	public void TransformUp() {

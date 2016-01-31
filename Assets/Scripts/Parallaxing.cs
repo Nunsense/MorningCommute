@@ -13,7 +13,7 @@ public class Parallaxing : MonoBehaviour {
 	public float distance;
 	float[] positions;
 
-	void Start() {
+	void Awake() {
 		prevPlayerPos = player.position.x;
 
 		parallaxScales = new float[backgrounds.Length];
