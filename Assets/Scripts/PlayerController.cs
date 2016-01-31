@@ -39,27 +39,11 @@ public class PlayerController : MonoBehaviour {
 			SoundManager.instance.playCoffee();
 			coffeeLevel += 1;
 			col.gameObject.SetActive(false);
-			UpdateUI();
 
 			if(coffeeLevel == 4)
 				Die();
 			else
-				UpdateSpeed();	
-//		} else if(col.tag == "goblin") {
-//			if(coffeeLevel == 3) {
-//				col.attachedRigidbody.AddForce((col.transform.position - transform.position) * 500);
-//			} else {
-//				Die();
-//			}
-//		} else if(col.tag == "oldLady" || col.tag == "elf") {
-//			if(coffeeLevel == 0) {
-//				Die();
-//			} else if(coffeeLevel == 3) {
-//				col.attachedRigidbody.AddForce((col.transform.position - transform.position) * 500);
-//			} else {
-//				coffeeLevel--;
-//				UpdateUI();
-//			}
+				UpdateSpeed();
 		}
 	}
 	
@@ -137,9 +121,14 @@ public class PlayerController : MonoBehaviour {
 			cameraController.SetMaxBlur();
 			break;
 		}
+		UpdateUI();
 	}
 	
 	void Die() {
+		anim.SetTrigger("dead");
+	}
+	
+	void Dead() {
 		gui.EndGame(movement.distance);
 	}
 
@@ -171,6 +160,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void ConsumeCoffee() {
 		coffeeLevel--;
+		UpdateSpeed();
 		UpdateUI();
 	}
 }
