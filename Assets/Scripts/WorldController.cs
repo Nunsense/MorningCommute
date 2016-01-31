@@ -18,7 +18,6 @@ public class WorldController : MonoBehaviour {
 	int coffeLevels;
 
 	void Awake() {
-		PlayerPrefs.DeleteAll();
 		movement = player.GetComponent<PlayerMovement>();
 		controller = player.GetComponent<PlayerController>();
 	}

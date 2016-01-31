@@ -68,6 +68,7 @@ public class Parallaxing : MonoBehaviour {
 			pos.x = positions[i];
 			backgrounds[i].position = pos;
 		}
+		SetNormal();
 	}
 	
 	public void SetSlow() {

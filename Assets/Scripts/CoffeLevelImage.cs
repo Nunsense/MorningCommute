@@ -23,7 +23,7 @@ public class CoffeLevelImage : MonoBehaviour {
 	}
 	
 	void Start() {
-		crazyImageOrigin = crazyImage.localPosition;
+		crazyImageOrigin = transform.localPosition;
 		origin = transform.localPosition;
 	}
 
