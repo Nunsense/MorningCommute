@@ -4,13 +4,15 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 	public GuiManager gui;
 	public CoffeLevelImage coffeLevelImage;
+	public CameraController cameraController;
 	int coffeeLevel;
 	PlayerMovement movement;
 	float coffeeTimeElapsed;
-	float coffeeTime = 2; //5 seconds
+	float coffeeTime = 5; //5 seconds
 	Animator anim;
 
 	void Awake() {
+		coffeeTimeElapsed = coffeeTime;
 		anim = GetComponent<Animator>();
 		coffeeLevel = 1;
 		movement = GetComponent<PlayerMovement>();
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		
 		coffeeTimeElapsed -= Time.deltaTime;
-		if(coffeeTimeElapsed == 0) {
+		if(coffeeTimeElapsed <= 0) {
 			ConsumeCoffee();
 			coffeeTimeElapsed = coffeeTime;
 		}
@@ -115,19 +117,24 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void UpdateSpeed() {
+		coffeeTimeElapsed = coffeeTime;
 		anim.SetInteger("speed", coffeeLevel);
 		switch (coffeeLevel) {
 		case 0:
 			movement.SetSlowSpeed();
+			cameraController.SetNoneBlur();
 			break;
 		case 1:
 			movement.SetNormalSpeed();
+			cameraController.SetNoneBlur();
 			break;
 		case 2:
 			movement.SetFastSpeed();
+			cameraController.SetMinBlur();
 			break;
 		case 3:
 			movement.SetSuperFastSpeed();
+			cameraController.SetMaxBlur();
 			break;
 		}
 	}
@@ -145,7 +152,17 @@ public class PlayerController : MonoBehaviour {
 		coffeeLevel = 1;
 		movement.SetNoSpeed();
 		UpdateUI();
+		anim.SetBool("grounded", false);
 		anim.SetTrigger("wake_up");
+	}
+	
+	public void TriggerJump() {
+		anim.SetTrigger("jump");
+		anim.SetBool("grounded", false);
+	}
+	
+	public void TriggerGrounded() {
+		anim.SetBool("grounded", true);
 	}
 
 	public int GetCoffee() {

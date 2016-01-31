@@ -41,14 +41,16 @@ public class PlayerMovement : MonoBehaviour {
 	void Update() {
 		if (isGrounded) {
 			if (Input.GetKeyDown(KeyCode.Space)) {
+				controller.TriggerJump();
 				canDoubleJump = true;
 				Jump();
 			}	
 		} else {
 			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+				controller.TriggerJump();
 				canDoubleJump = false;
 				controller.ConsumeCoffee();
-				Jump();
+				DoubleJump();
 			}
 		}
 		
@@ -70,6 +72,7 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D col) {
 		if (col.gameObject.tag == "ground") {
 			isGrounded = true;
+			controller.TriggerGrounded();
 		}
 	}
 
