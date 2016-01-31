@@ -59,6 +59,7 @@ public class Goblin : MonoBehaviour {
 	}
 	
 	public void TransformDown() {
+		anim.ResetTrigger("up");
 		anim.SetTrigger("down");
 	}
 }

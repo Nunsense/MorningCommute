@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class WorldController : MonoBehaviour {
+	public Parallaxing paralaxing;
 	public Transform player;
 	public PlayerMovement movement;
 	public PlayerController controller;
@@ -58,7 +59,7 @@ public class WorldController : MonoBehaviour {
 			pos.y = 0;
 			floor.transform.position = pos;
 			floor.ResetContent(movement.distance);
-			if (controller.GetCoffee() == 0) {
+			if(controller.GetCoffee() == 0) {
 				floor.TransformUp();
 			} else {
 				floor.TransformDown();
@@ -71,6 +72,8 @@ public class WorldController : MonoBehaviour {
 	}
 
 	public void Reset() {
+		paralaxing.Reset();
+		
 		for(int i = 0; i < floors.Length; i++) {
 			floors[i].Reset();
 		}

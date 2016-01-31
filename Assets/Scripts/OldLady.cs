@@ -32,6 +32,7 @@ public class OldLady : MonoBehaviour {
 	}
 	
 	public void TransformDown() {
+		anim.ResetTrigger("up");
 		anim.SetTrigger("down");
 	}
 }

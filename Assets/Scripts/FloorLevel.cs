@@ -77,8 +77,8 @@ public class FloorLevel : MonoBehaviour {
 	}
 	
 	public void TransformDown() {
-		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformUp();
-		if (goblin && goblin.gameObject.activeSelf) goblin.TransformUp();
-		if (elf && elf.gameObject.activeSelf) elf.TransformUp();
+		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformDown();
+		if (goblin && goblin.gameObject.activeSelf) goblin.TransformDown();
+		if (elf && elf.gameObject.activeSelf) elf.TransformDown();
 	}
 }
