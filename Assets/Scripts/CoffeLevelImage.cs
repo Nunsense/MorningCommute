@@ -46,16 +46,25 @@ public class CoffeLevelImage : MonoBehaviour {
 		switch (level) {
 		case 0:
 			image.sprite = slowSprite;
+			crazyImage.gameObject.SetActive(false);
 			break;
 		case 1:
 			image.sprite = normalSprite;
+			crazyImage.gameObject.SetActive(false);
 			break;
 		case 2:
 			image.sprite = fastSprite;
+			crazyImage.gameObject.SetActive(true);
 			break;
 		case 3:
 			image.sprite = superFastSprite;
+			crazyImage.gameObject.SetActive(true);
 			break;
 		}
+	}
+	
+	public void Reset() {
+		crazyImage.localPosition = crazyImageOrigin;
+		transform.localPosition = origin;
 	}
 }

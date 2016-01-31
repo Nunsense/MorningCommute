@@ -778,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 607362622}
   movement: {fileID: 607362625}
+  controller: {fileID: 0}
   cameraController: {fileID: 1019900938}
   flag: {fileID: 2051682348}
   floorWidth: 21.94
@@ -2172,6 +2173,7 @@ MonoBehaviour:
   gui: {fileID: 34302655}
   coffeLevelImage: {fileID: 1031260182}
   cameraController: {fileID: 1019900938}
+  world: {fileID: 118504239}
 --- !u!95 &607362627
 Animator:
   serializedVersion: 3
@@ -2256,7 +2258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419880, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 2.48
       objectReference: {fileID: 0}
     - target: {fileID: 419880, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2281,14 +2283,6 @@ Prefab:
     - target: {fileID: 419880, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114478, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
-      propertyPath: m_Name
-      value: Gobling
-      objectReference: {fileID: 0}
-    - target: {fileID: 114478, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a7c260ac22bb4776be9f66abfc629e4, type: 2}
@@ -2587,7 +2581,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 138874, guid: dc16cc2b9e2704817a3a7be9ae9e7ec1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc16cc2b9e2704817a3a7be9ae9e7ec1, type: 2}
@@ -4687,7 +4681,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

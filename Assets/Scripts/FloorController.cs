@@ -42,5 +42,17 @@ public class FloorController : MonoBehaviour {
 		currentLevel.gameObject.SetActive(true);
 		currentLevel.Reset();
 	}
+	
+	public void TransformUp() {
+		for (int i = 0; i < levels.Length; i++) {
+			levels[i].TransformUp();
+		}
+	}
+	
+	public void TransformDown() {
+		for (int i = 0; i < levels.Length; i++) {
+			levels[i].TransformDown();
+		}
+	}
 }
 

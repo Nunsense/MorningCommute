@@ -5,7 +5,9 @@ public class PlayerController : MonoBehaviour {
 	public GuiManager gui;
 	public CoffeLevelImage coffeLevelImage;
 	public CameraController cameraController;
+	public WorldController world;
 	int coffeeLevel;
+	int prevCoffeeLevel;
 	PlayerMovement movement;
 	float coffeeTimeElapsed;
 	float coffeeTime = 5; //5 seconds
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	void Awake() {
 		coffeeTimeElapsed = coffeeTime;
 		anim = GetComponent<Animator>();
+		prevCoffeeLevel = 1;
 		coffeeLevel = 1;
 		movement = GetComponent<PlayerMovement>();
 	}
@@ -105,10 +108,13 @@ public class PlayerController : MonoBehaviour {
 		anim.SetInteger("speed", coffeeLevel);
 		switch (coffeeLevel) {
 		case 0:
+			world.TransformUp();
 			movement.SetSlowSpeed();
 			cameraController.SetNoneBlur();
 			break;
 		case 1:
+			if (prevCoffeeLevel == 0)
+				world.TransformDown();
 			movement.SetNormalSpeed();
 			cameraController.SetNoneBlur();
 			break;
@@ -122,6 +128,7 @@ public class PlayerController : MonoBehaviour {
 			break;
 		}
 		UpdateUI();
+		prevCoffeeLevel = coffeeLevel;
 	}
 	
 	void Die() {
@@ -159,8 +166,10 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void ConsumeCoffee() {
-		coffeeLevel--;
-		UpdateSpeed();
-		UpdateUI();
+		if (coffeeLevel > 0) {
+			coffeeLevel--;
+			UpdateSpeed();
+			UpdateUI();
+		}
 	}
 }

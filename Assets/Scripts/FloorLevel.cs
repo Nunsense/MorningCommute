@@ -56,7 +56,7 @@ public class FloorLevel : MonoBehaviour {
 		} else if (goblin) {
 			if (rand < 0.88f) {
 				Vector3 pos = goblin.transform.localPosition;
-				pos.x = 3.64f;
+				pos.x = 2.48f;
 				pos.y = 1f;
 				goblin.transform.localPosition = pos;
 				goblin.gameObject.SetActive(true);
@@ -68,5 +68,17 @@ public class FloorLevel : MonoBehaviour {
 		if (oldLady) oldLady.Reset();
 		if (goblin) goblin.Reset();
 		if (elf) elf.Reset();
+	}	
+	
+	public void TransformUp() {
+		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformUp();
+		if (goblin && goblin.gameObject.activeSelf) goblin.TransformUp();
+		if (elf && elf.gameObject.activeSelf) elf.TransformUp();
+	}
+	
+	public void TransformDown() {
+		if (oldLady && oldLady.gameObject.activeSelf) oldLady.TransformUp();
+		if (goblin && goblin.gameObject.activeSelf) goblin.TransformUp();
+		if (elf && elf.gameObject.activeSelf) elf.TransformUp();
 	}
 }

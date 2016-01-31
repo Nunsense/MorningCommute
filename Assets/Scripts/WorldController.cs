@@ -4,6 +4,7 @@ using System.Collections;
 public class WorldController : MonoBehaviour {
 	public Transform player;
 	public PlayerMovement movement;
+	public PlayerController controller;
 	public CameraController cameraController;
 	public TopDistanceFlag flag;
 	FloorController[] floors;
@@ -13,9 +14,11 @@ public class WorldController : MonoBehaviour {
 	float lastFloorX;
 	int lastFloorIndex = 0;
 	int topDistance;
+	int coffeLevels;
 
 	void Awake() {
 		movement = player.GetComponent<PlayerMovement>();
+		controller = player.GetComponent<PlayerController>();
 	}
 	
 	void Start() {
@@ -55,6 +58,11 @@ public class WorldController : MonoBehaviour {
 			pos.y = 0;
 			floor.transform.position = pos;
 			floor.ResetContent(movement.distance);
+			if (controller.GetCoffee() == 0) {
+				floor.TransformUp();
+			} else {
+				floor.TransformDown();
+			}
 		}
 	}
 
@@ -89,5 +97,25 @@ public class WorldController : MonoBehaviour {
 	public void SetTopDistnce(int dist) {
 		if(GetTopDistnce() < dist)
 			PlayerPrefs.SetInt("top_distance", dist);
+	}
+	
+	public void TransformUp() {
+		for(int i = 0; i < floors.Length; i++) {
+			floors[i].TransformUp();
+		}
+	}
+	
+	public void TransformDown() {
+		for(int i = 0; i < floors.Length; i++) {
+			floors[i].TransformDown();
+		}
+	}
+	
+	public void SetCoffeLevels(int level) {
+		coffeLevels = level;
+	}
+	
+	public int GetCoffoLevels() {
+		return coffeLevels;
 	}
 }
