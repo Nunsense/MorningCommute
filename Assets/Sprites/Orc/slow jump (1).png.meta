@@ -17,7 +17,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -259,7 +259,7 @@ TextureImporter:
         - {x: 70.5, y: 77}
         - {x: 55.5, y: 112}
     outline: []
-  spritePackingTag: 
+  spritePackingTag: enemies
   userData: 
   assetBundleName: 
   assetBundleVariant: 
