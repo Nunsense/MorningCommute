@@ -53,8 +53,6 @@ public class PlayerMovement : MonoBehaviour {
 				canDoubleJump = true;
 			}
 
-			if (canDoubleJump)
-				Debug.Log("asdasdsa");
 			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
 				controller.TriggerJump();
 				canDoubleJump = false;
