@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void Reset() {
+		transform.eulerAngles = Vector3.zero;
 		coll.isTrigger = false;
 		body.isKinematic = false;
 		transform.localPosition = origin;

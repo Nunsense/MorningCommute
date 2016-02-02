@@ -13,9 +13,12 @@ public class CameraController : MonoBehaviour {
 	MotionBlur blur;
 	Bloom bloom;
 	
-	float bloomTime = 0.2f;
-	float bloomingeTimeElapsed;
-	bool blooming = false;
+	float speedingTime = 1f;
+	float speedingTimeElapsed;
+	bool speeding = false;
+
+	float maxBlur;
+	float maxBloom;
 
 	void Awake() {
 		blur = GetComponent<MotionBlur>();
@@ -35,14 +38,15 @@ public class CameraController : MonoBehaviour {
 	
 		transform.position = posTemp;
 		
-		if(blooming) {
-			bloomingeTimeElapsed += Time.deltaTime;
-			if(bloomingeTimeElapsed >= bloomTime) {
-				blooming = false;
+		if(speeding) {
+			speedingTimeElapsed += Time.deltaTime;
+			if(speedingTimeElapsed >= speedingTime) {
+				speeding = false;
 				transform.localScale = Vector3.one;
 			}
 			
-			bloom.bloomIntensity = Mathf.Lerp(bloom.bloomIntensity, 1.5f, bloomingeTimeElapsed / bloomTime);
+			bloom.bloomIntensity = Mathf.Lerp(bloom.bloomIntensity, maxBloom, speedingTimeElapsed / speedingTime);
+			blur.blurAmount = Mathf.Lerp(blur.blurAmount, maxBlur, speedingTimeElapsed / speedingTime);
 		}
 	}
 	
@@ -51,17 +55,29 @@ public class CameraController : MonoBehaviour {
 	}
 	
 	public void SetMaxBlur() {
+		maxBloom = 1.2f;
 		bloom.bloomIntensity = 0;
 		bloom.enabled = true;
-		blooming = true;
-		blur.blurAmount = 0.6f;
+
+		maxBlur = 0.6f;
+		blur.blurAmount = 0f;
 		blur.enabled = true;
+
+		speedingTimeElapsed = 0;
+		speeding = true;
 	}
 	
 	public void SetMinBlur() {
-		bloom.enabled = false;
-		blur.blurAmount = 0.3f;
+		maxBloom = 0.3f;
+		bloom.bloomIntensity = 0;
+		bloom.enabled = true;
+
+		maxBlur = 0.4f;
+		blur.blurAmount = 0f;
 		blur.enabled = true;
+
+		speedingTimeElapsed = 0;
+		speeding = true;
 	}
 	
 	public void SetNoneBlur() {

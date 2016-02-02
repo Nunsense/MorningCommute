@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour {
 	PlayerController controller;
 	bool isMooving;
 
+	float ChangeSpeedTime = 1f;
+	float changeSpeedTimeElapsed;
+	float maxSpeed;
+	bool changeingSpeed = false;
+
 	void Awake() {
 		isMooving = true;
 		isJumping = false;
@@ -62,6 +67,15 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (isMooving) {
+			if(changeingSpeed) {
+				changeSpeedTimeElapsed += Time.deltaTime;
+				if(changeSpeedTimeElapsed >= ChangeSpeedTime) {
+					changeingSpeed = false;
+				}
+
+				currentSpeed = Mathf.Lerp(currentSpeed, maxSpeed, changeSpeedTimeElapsed / ChangeSpeedTime);
+			}
+
 			Vector3 pos = transform.position;
 			float prevX = pos.x;
 			pos.x += currentSpeed * Time.deltaTime;
@@ -79,6 +93,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void DoubleJump() {
+		isFalling = false;
 		body.velocity = new Vector2(body.velocity.x, 0);
 		body.AddForce(transform.up * jumpForce);
 		canDoubleJump = false;
@@ -107,27 +122,32 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	public void SetNoSpeed() {
-		currentSpeed = 0;
+		maxSpeed = 0;
+		changeingSpeed = true;
 	}
 
 	public void SetSlowSpeed() {
 		SoundManager.instance.playMusicSlow();
-		currentSpeed = slowSpeed;
+		maxSpeed = slowSpeed;
+		changeingSpeed = true;
 	}
 
 	public void SetNormalSpeed() {
 		SoundManager.instance.playMusicNormal();
-		currentSpeed = normalSpeed;
+		maxSpeed = normalSpeed;
+		changeingSpeed = true;
 	}
 
 	public void SetFastSpeed() {
 		SoundManager.instance.playMusicFast();
-		currentSpeed = fastSpeed;
+		maxSpeed = fastSpeed;
+		changeingSpeed = true;
 	}
 
 	public void SetSuperFastSpeed() {
 		SoundManager.instance.playMusicSuperFast();
-		currentSpeed = superFastSpeed;
+		maxSpeed = superFastSpeed;
+		changeingSpeed = true;
 	}
 
 	public void Reset() {
