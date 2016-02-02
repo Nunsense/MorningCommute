@@ -14,16 +14,19 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody2D body;
 	bool isGrounded;
 	bool isJumping;
+	bool isFalling;
 	bool canDoubleJump;
 	Vector3 origin;
 	PlayerController controller;
+	bool isMooving;
 
 	void Awake() {
+		isMooving = true;
+		isJumping = false;
 		controller = GetComponent<PlayerController>();
 		origin = transform.position;
 		canDoubleJump = false;
 		isGrounded = false;
-		isJumping = false;
 		body = GetComponent<Rigidbody2D>();
 	}
 
@@ -36,56 +39,75 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Update() {
-		if(isGrounded) {
-			if(Input.GetKeyDown(KeyCode.Space)) {
+		if (isGrounded) {
+			if (!isJumping && Input.GetKeyDown(KeyCode.Space)) {
 				controller.TriggerJump();
-				canDoubleJump = true;
+				isMooving = false;
 				isJumping = true;
-				Jump();
+				canDoubleJump = true;
 			}	
 		} else {
-			if(controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+			if (!isFalling && body.velocity.y < 0) {
+				controller.TriggerFall();
+				isFalling = true; 
+				canDoubleJump = true;
+			}
+
+			if (canDoubleJump)
+				Debug.Log("asdasdsa");
+			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
 				controller.TriggerJump();
 				canDoubleJump = false;
 				controller.ConsumeCoffee();
 				DoubleJump();
 			}
 		}
-		
-		Vector3 pos = transform.position;
-		float prevX = pos.x;
-		pos.x += currentSpeed * Time.deltaTime;
-		transform.position = pos;
+
+		if (isMooving) {
+			Vector3 pos = transform.position;
+			float prevX = pos.x;
+			pos.x += currentSpeed * Time.deltaTime;
+			transform.position = pos;
+		}
 	}
 
 	void Jump() {
+		if (!isJumping)
+			return;
 		body.AddForce(transform.up * jumpForce);
+		isMooving = true;
+		isJumping = false;
+		controller.ResetJump();
 	}
-	
+
 	void DoubleJump() {
-		body.AddForce(transform.up * (jumpForce / 2));
+		body.velocity = new Vector2(body.velocity.x, 0);
+		body.AddForce(transform.up * jumpForce);
+		canDoubleJump = false;
 	}
 
 	void OnCollisionStay2D(Collision2D col) {
-		if(col.gameObject.tag == "ground") {
-			isGrounded = true;
-			isJumping = false;
-			controller.TriggerGrounded();
+		if (col.gameObject.tag == "ground") {
+			if (!isGrounded) {
+				controller.TriggerGrounded();
+				isGrounded = true;
+				isFalling = false;
+			}
 		}
 	}
 
 	void OnCollisionExit2D(Collision2D col) {
-		if(col.gameObject.tag == "ground") {
-			isGrounded = false;
-			if(!isJumping)
-				controller.TriggerFall();
+		if (col.gameObject.tag == "ground") {
+			if (isGrounded) {
+				isGrounded = false;
+			}
 		}
 	}
 
 	public float VerticalSpeed() {
 		return body.velocity.y;
 	}
-	
+
 	public void SetNoSpeed() {
 		currentSpeed = 0;
 	}

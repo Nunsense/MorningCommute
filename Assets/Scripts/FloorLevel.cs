@@ -17,21 +17,21 @@ public class FloorLevel : MonoBehaviour {
 	}
 
 	void HideEnemies() {
-		for(int i = 0; i < enemies.Length; i++) {
+		for (int i = 0; i < enemies.Length; i++) {
 			enemies[i].gameObject.SetActive(false);
 		}
 	}
 
 	public void Reset() {
-		for(int i = 0; i < coffeeBeans.Length; i++) {
+		for (int i = 0; i < coffeeBeans.Length; i++) {
 			coffeeBeans[i].gameObject.SetActive(false);
 		}
 		
 		int total = 0;
 		int maxTries = coffeeBeans.Length;
-		while(total < 2 && maxTries > 0) {
+		while (total < 2 && maxTries > 0) {
 			int i = Random.Range(0, coffeeBeans.Length);
-			if(!coffeeBeans[i].gameObject.activeSelf) {
+			if (!coffeeBeans[i].gameObject.activeSelf) {
 				coffeeBeans[i].Reset();
 				coffeeBeans[i].gameObject.SetActive(true);
 				total++;
@@ -39,38 +39,43 @@ public class FloorLevel : MonoBehaviour {
 			maxTries--;
 		}
 
-		HideEnemies();
-		float rand = Random.value;
-		if(rand < .5f) { // one enemy
-			int i = Random.Range(0, enemies.Length);
-			enemies[i].Reset();
-			enemies[i].gameObject.SetActive(true);
-		} else { // two enemy
-			total = 0;
-			maxTries = enemies.Length;
-			while(total < 2 && maxTries > 0) {
+		if (enemies.Length > 0) {
+			HideEnemies();
+			float rand = Random.value;
+			if (rand < .5f) { // one enemy
 				int i = Random.Range(0, enemies.Length);
-				if(!enemies[i].gameObject.activeSelf) {
+				Enemy enem = enemies[i];
+				if (enem) {
 					enemies[i].Reset();
 					enemies[i].gameObject.SetActive(true);
-					total++;
+				}
+			} else { // two enemy
+				total = 0;
+				maxTries = enemies.Length;
+				while (total < 2 && maxTries > 0) {
+					int i = Random.Range(0, enemies.Length);
+					if (!enemies[i].gameObject.activeSelf) {
+						enemies[i].Reset();
+						enemies[i].gameObject.SetActive(true);
+						total++;
+					}
 				}
 			}
 		}
 	}
-	
+
 	public void TransformUp() {
-		for(int i = 0; i < enemies.Length; i++) {
+		for (int i = 0; i < enemies.Length; i++) {
 			Enemy enem = enemies[i];
-			if(enem && enem.gameObject.activeSelf)
+			if (enem && enem.gameObject.activeSelf)
 				enem.TransformUp();
 		}
 	}
-	
+
 	public void TransformDown() {
-		for(int i = 0; i < enemies.Length; i++) {
+		for (int i = 0; i < enemies.Length; i++) {
 			Enemy enem = enemies[i];
-			if(enem && enem.gameObject.activeSelf)
+			if (enem && enem.gameObject.activeSelf)
 				enem.TransformDown();
 		}
 	}

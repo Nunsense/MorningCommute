@@ -166,7 +166,11 @@ public class PlayerController : MonoBehaviour {
 		anim.SetTrigger("jump");
 		anim.SetBool("grounded", false);
 	}
-	
+
+	public void ResetJump() {
+		anim.ResetTrigger("jump");
+	}
+
 	public void TriggerGrounded() {
 		anim.SetBool("grounded", true);
 	}
