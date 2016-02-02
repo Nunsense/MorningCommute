@@ -154,6 +154,10 @@ public class PlayerController : MonoBehaviour {
 		movement.SetNoSpeed();
 		UpdateUI();
 		anim.SetBool("grounded", false);
+		anim.SetBool("idDead", false);
+		anim.ResetTrigger("jump");
+		anim.ResetTrigger("dead");
+		anim.ResetTrigger("fall");
 		anim.SetTrigger("wake_up");
 	}
 	
