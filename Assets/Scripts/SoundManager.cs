@@ -23,8 +23,10 @@ public class SoundManager : MonoBehaviour {
 	private int currentGameMusicNumber;
 	public static SoundManager instance = null;
 
+	bool inMenu;
+
 	void Awake() {
-		if(instance == null)
+		if (instance == null)
 			instance = this;
 		else
 			Destroy(gameObject);
@@ -33,6 +35,7 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	void Setup() {
+		inMenu = false;
 		gameMusicSource.clip = normal;
 		currentGameMusicNumber = 2;
 	}
@@ -46,12 +49,12 @@ public class SoundManager : MonoBehaviour {
 		soundfx.clip = ring;
 		soundfx.Play();
 	}
-	
+
 	public void playPunch() {
 		soundfx.clip = punch;
 		soundfx.Play();
 	}
-	
+
 	public void playGoblin() {
 		soundfx.clip = goblin[Random.Range(0, goblin.Length)];
 		soundfx.Play();
@@ -61,13 +64,15 @@ public class SoundManager : MonoBehaviour {
 		soundfx.clip = oldLady[Random.Range(0, oldLady.Length)];
 		soundfx.Play();
 	}
-	
+
 	public void playPigeon() {
 		soundfx.clip = pigeon[Random.Range(0, pigeon.Length)];
 		soundfx.Play();
 	}
 
 	public void playMusicSlow() {
+		if (inMenu)
+			return;
 		gameMusicSource.Stop();
 		transitionsFxSource.clip = switchDown;
 		gameMusicSource.clip = slow;
@@ -76,9 +81,12 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void playMusicNormal() {
+		if (inMenu)
+			return;
+
 		gameMusicSource.Stop();
 
-		if(currentGameMusicNumber > 2)
+		if (currentGameMusicNumber > 2)
 			transitionsFxSource.clip = switchDown;
 		else
 			transitionsFxSource.clip = switchUp;
@@ -88,9 +96,12 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void playMusicFast() {
+		if (inMenu)
+			return;
+
 		gameMusicSource.Stop();
 
-		if(currentGameMusicNumber > 3)
+		if (currentGameMusicNumber > 3)
 			transitionsFxSource.clip = switchDown;
 		else
 			transitionsFxSource.clip = switchUp;
@@ -101,6 +112,9 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void playMusicSuperFast() {
+		if (inMenu)
+			return;
+
 		gameMusicSource.Stop();
 		transitionsFxSource.clip = switchUp;
 		gameMusicSource.clip = superFast;
@@ -109,6 +123,8 @@ public class SoundManager : MonoBehaviour {
 	}
 
 	public void playMenuMusic() {
+		inMenu = true;
+		transitionsFxSource.Stop();
 		gameMusicSource.Pause();
 		menuMusicSource.Play();
 	}
@@ -116,15 +132,17 @@ public class SoundManager : MonoBehaviour {
 	public void stopMenuMusic() {
 		menuMusicSource.Stop();
 		gameMusicSource.Play();
+		inMenu = false;
 	}
-	
+
 	public void StopGameMusic() {
 		gameMusicSource.Stop();
 	}
 
-	private IEnumerator transition() {
+	private IEnumerator transition() {	
 		transitionsFxSource.Play();
 		yield return new WaitWhile(() => transitionsFxSource.isPlaying);
-		gameMusicSource.Play();
+		if (!inMenu)
+			gameMusicSource.Play();
 	}
 }

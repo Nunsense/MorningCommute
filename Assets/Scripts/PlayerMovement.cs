@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		if (isGrounded) {
-			if (!isJumping && Input.GetKeyDown(KeyCode.Space)) {
+			if (!isJumping && JumpInput()) {
 				controller.TriggerJump();
 				isMooving = false;
 				isJumping = true;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 				canDoubleJump = true;
 			}
 
-			if (controller.GetCoffee() > 0 && Input.GetKeyDown(KeyCode.Space) && canDoubleJump) {
+			if (controller.GetCoffee() > 0 && JumpInput() && canDoubleJump) {
 				controller.TriggerJump();
 				canDoubleJump = false;
 				controller.ConsumeCoffee();
@@ -67,9 +67,9 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		if (isMooving) {
-			if(changeingSpeed) {
+			if (changeingSpeed) {
 				changeSpeedTimeElapsed += Time.deltaTime;
-				if(changeSpeedTimeElapsed >= ChangeSpeedTime) {
+				if (changeSpeedTimeElapsed >= ChangeSpeedTime) {
 					changeingSpeed = false;
 				}
 
@@ -153,6 +153,15 @@ public class PlayerMovement : MonoBehaviour {
 	public void Reset() {
 		transform.position = origin;
 		currentSpeed = normalSpeed;
-		body.velocity = Vector3.zero;
+		isJumping = false;
+		isGrounded = true;
+		isFalling = false;
+		isMooving = true;
+		body.velocity = Vector3.zero;	
+		body.angularVelocity = 0; 
+	}
+
+	bool JumpInput() {
+		return Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
 	}
 }

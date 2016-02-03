@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Dead() {
+		movement.enabled = false;
 		gui.EndGame(transform.position.x);
 	}
 
@@ -153,12 +154,13 @@ public class PlayerController : MonoBehaviour {
 		movement.Reset();
 		movement.SetNoSpeed();
 		UpdateUI();
-		anim.SetBool("grounded", false);
+		anim.SetBool("grounded", true);
 		anim.SetBool("idDead", false);
 		anim.ResetTrigger("jump");
 		anim.ResetTrigger("dead");
 		anim.ResetTrigger("fall");
 		anim.SetTrigger("wake_up");
+		movement.enabled = true;
 	}
 	
 	public void TriggerFall() {

@@ -32,11 +32,13 @@ public class FloorController : MonoBehaviour {
 			currentLevel.gameObject.SetActive(false);
 		
 		if (distance < 20) {
-			currentLevel = levels[Random.Range(0, Mathf.CeilToInt(levels.Length / 3))];
-		} else if (distance > 20 && distance < 50) {
-			currentLevel = levels[Random.Range(0, levels.Length)];
+			currentLevel = levels[Random.Range(0, 2)];
+		} else if (distance < 50) {
+			currentLevel = levels[Random.Range(1, 3)];
+		} else if (distance >= 50 && distance < 150) {
+			currentLevel = levels[Random.Range(2, levels.Length - 2)];
 		} else {
-			currentLevel = levels[Random.Range(0, Mathf.CeilToInt(2 * (levels.Length / 3)))];
+			currentLevel = levels[Random.Range(levels.Length - 4, levels.Length)];
 		}
 		
 		currentLevel.gameObject.SetActive(true);
